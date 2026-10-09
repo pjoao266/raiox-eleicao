@@ -1,2 +1,5 @@
 export type Placements={counts:number[],loaded:number};
 export function placementBands(cargo:string){const bands=[{from:1,to:1,label:'1º lugar'},{from:2,to:2,label:'2º lugar'},{from:3,to:3,label:'3º lugar'}];if(!['1','3'].includes(cargo))bands.push({from:4,to:5,label:'4º–5º lugar'});if(!['1','3','5'].includes(cargo))bands.push({from:6,to:10,label:'6º–10º lugar'});return bands;}
+import type {City} from './tse';
+type PositionedResult={position?:number|null,votes:number,percentage:number};
+export function placementCities<T extends City&PositionedResult>(cities:City[],rows:T[],band:{from:number,to:number}|null,cargo:string){const lookup=new Map(rows.map(row=>[row.uf+row.code,row])),cutoff=placementBands(cargo).at(-1)!.to;return cities.map(city=>{const result=lookup.get(city.uf+city.code)||null;return {city,result,position:result?.position??null}}).filter(item=>band?item.position!==null&&item.position>=band.from&&item.position<=band.to:item.position===null||item.position>cutoff).sort((a,b)=>(a.position??Infinity)-(b.position??Infinity)||(b.result?.percentage??-1)-(a.result?.percentage??-1)||a.city.name.localeCompare(b.city.name,'pt-BR'));}

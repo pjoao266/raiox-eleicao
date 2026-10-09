@@ -24,6 +24,7 @@ try{
  const governors=await data.localCandidates(election.id,'3','mg');assert.ok(governors.length);assert.ok(governors.every(c=>c.uf==='mg'&&c.cargo==='3'));
  const governor=await data.localAnalysis(governors[0],'mg');assert.equal(governor.complete,true);assert.equal(governor.rows.length+governor.unavailable,governor.total);
  const performances=await data.localPerformances(election.id,'3','mg');assert.equal(performances.rows.length,10);assert.ok(performances.rows.every(r=>r.uf==='mg'&&r.candidate.cargo==='3'));assert.ok(performances.rows.every((r,i,arr)=>i===0||r.percentage<=arr[i-1].percentage));
+ assert.ok(national.rows.every(r=>r.position===null||Number.isInteger(r.position)&&r.position>0));for(let i=1;i<=10;i++)assert.equal(national.placements.counts[i-1],national.rows.filter(r=>r.position===i).length);
  assert.equal(national.placements.counts.length,10);assert.equal(national.placements.loaded,national.rows.length);assert.equal(mg.placements.loaded,mg.rows.length);assert.ok(mg.placements.counts.every((n,i)=>n<=national.placements.counts[i]));assert.ok(national.placements.counts.reduce((a,b)=>a+b,0)<=national.total);
  const before=paths.length;await data.localAnalysis(presidents[0],'mg');assert.equal(paths.length,before,'repeat analysis reuses the loaded snapshot');
  console.log(JSON.stringify({snapshot:catalog.version,nationalMunicipalities:national.total,mgMunicipalities:mg.total,governorRows:governor.rows.length,performanceRows:performances.rows.length,requests:paths.length,passed:true}));

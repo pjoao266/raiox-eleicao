@@ -1,7 +1,7 @@
 export type Candidate={id:string,sqcand:string,name:string,fullName:string,number:string,party:string,uf:string,election:string,cargo:string,status:string,destination:string};
 export type Result={votes:number,percentage:number,counted:number,updatedAt:string,status:string,destination:string,cacheFetchedAt?:number};
 export type City={code:string,ibge:string,name:string,uf:string,zones:string[]};
-export type Row=City&Result;
+export type Row=City&Result&{position?:number|null};
 export type Election={id:string,cycle:string,turn:string,name:string,cargos:{id:string,name:string}[],areas:string[],cargoAreas:Record<string,string[]>};
 export const UFS:Record<string,{id:string,name:string}>={ac:{id:'12',name:'Acre'},al:{id:'27',name:'Alagoas'},ap:{id:'16',name:'Amapá'},am:{id:'13',name:'Amazonas'},ba:{id:'29',name:'Bahia'},ce:{id:'23',name:'Ceará'},df:{id:'53',name:'Distrito Federal'},es:{id:'32',name:'Espírito Santo'},go:{id:'52',name:'Goiás'},ma:{id:'21',name:'Maranhão'},mt:{id:'51',name:'Mato Grosso'},ms:{id:'50',name:'Mato Grosso do Sul'},mg:{id:'31',name:'Minas Gerais'},pa:{id:'15',name:'Pará'},pb:{id:'25',name:'Paraíba'},pr:{id:'41',name:'Paraná'},pe:{id:'26',name:'Pernambuco'},pi:{id:'22',name:'Piauí'},rj:{id:'33',name:'Rio de Janeiro'},rn:{id:'24',name:'Rio Grande do Norte'},rs:{id:'43',name:'Rio Grande do Sul'},ro:{id:'11',name:'Rondônia'},rr:{id:'14',name:'Roraima'},sc:{id:'42',name:'Santa Catarina'},sp:{id:'35',name:'São Paulo'},se:{id:'28',name:'Sergipe'},to:{id:'17',name:'Tocantins'}};
 export function numeric(value:unknown):number|null{if(value===null||value===undefined||value==='')return null;const n=Number(String(value).replace(',','.'));return Number.isFinite(n)?n:null;}
