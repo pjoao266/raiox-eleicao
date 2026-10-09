@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';import {test} from 'node:test';import {defaultViewport,zoomAt,boundViewport,pinchViewport} from '../lib/map-viewport.ts';
+test('zoom preserves the map point under its anchor',()=>{const v=zoomAt(defaultViewport,2);assert.deepEqual(v,{zoom:2,x:-320,y:-215});assert.equal((320-v.x)/v.zoom,320);assert.equal((215-v.y)/v.zoom,215)});
+test('zoom and pan stay within map bounds and reset at 1x',()=>{assert.equal(zoomAt(defaultViewport,20).zoom,8);assert.deepEqual(zoomAt(zoomAt(defaultViewport,4),.01),defaultViewport);assert.deepEqual(boundViewport({zoom:2,x:1000,y:-1000}),{zoom:2,x:0,y:-430})});
+test('pinch follows the moving midpoint without losing its map point',()=>{const start=zoomAt(defaultViewport,2);const next=pinchViewport(start,{x:200,y:150},{x:230,y:170},1.5);assert.equal((230-next.x)/next.zoom,(200-start.x)/start.zoom);assert.equal((170-next.y)/next.zoom,(150-start.y)/start.zoom)});
