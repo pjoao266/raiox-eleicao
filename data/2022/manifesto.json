@@ -1,0 +1,69 @@
+{
+  "year": 2022,
+  "cargo": "Presidente",
+  "turns": [
+    1,
+    2
+  ],
+  "generated_at": "2026-10-09T16:53:09.730381+00:00",
+  "sources": [
+    {
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2022.zip",
+      "archive_sha256": "cd44bcc2260c3b7e53c254aa9b03ff989ad7511737d5df9a2b99c78e45eb00ef",
+      "member": "votacao_candidato_munzona_2022_BR.csv",
+      "output": "presidencia_votos_zona.csv.gz",
+      "output_bytes": 1845662,
+      "rows": 81679,
+      "coverage": {
+        "1": {
+          "brazil_cities": 5570,
+          "overseas_localities": 181,
+          "city_zones": 6283
+        },
+        "2": {
+          "brazil_cities": 5570,
+          "overseas_localities": 181,
+          "city_zones": 6283
+        }
+      },
+      "candidate_totals": {
+        "1:22": 51072345,
+        "1:15": 4915423,
+        "1:12": 3599287,
+        "1:21": 45620,
+        "1:16": 25625,
+        "1:27": 16604,
+        "1:14": 81129,
+        "1:80": 53519,
+        "2:22": 58206354,
+        "1:44": 600955,
+        "1:13": 57259504,
+        "1:30": 559708,
+        "2:13": 60345999
+      }
+    },
+    {
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/detalhe_votacao_munzona/detalhe_votacao_munzona_2022.zip",
+      "archive_sha256": "8fd10a41d40c2c6d9ced36dcbb6a9e212f96b62937bcdd09284587f118cf1a7b",
+      "member": "detalhe_votacao_munzona_2022_BR.csv",
+      "output": "presidencia_apuracao_zona.csv.gz",
+      "output_bytes": 610229,
+      "rows": 12566,
+      "coverage": {
+        "2": {
+          "brazil_cities": 5570,
+          "overseas_localities": 181,
+          "city_zones": 6283
+        },
+        "1": {
+          "brazil_cities": 5570,
+          "overseas_localities": 181,
+          "city_zones": 6283
+        }
+      },
+      "candidate_totals": {}
+    }
+  ],
+  "municipal_rows": 74763,
+  "validation": "Totais nacionais de Lula e Jair conferem nos dois turnos; votos em trânsito preservados nos dados por zona; exterior separado por UF ZZ."
+}
