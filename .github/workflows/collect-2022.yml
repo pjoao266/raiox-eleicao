@@ -25,7 +25,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/2022/*.csv.gz data/2022/manifesto.json
+          git add -f data/2022/*.csv.gz data/2022/manifesto.json
           if ! git diff --cached --quiet; then
             git commit -m 'Salva presidência 2022: municípios, zonas e apuração dos dois turnos'
             git push
