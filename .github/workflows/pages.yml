@@ -41,8 +41,11 @@ jobs:
             git commit -m 'Salva base municipal completa do TSE 2026 1T e mapas'
             git push
           fi
-      - run: node scripts/build-pages.mjs
       - uses: actions/configure-pages@v5
+        id: pages
+      - run: node scripts/build-pages.mjs
+        env:
+          PAGES_BASE: ${{ steps.pages.outputs.base_path }}/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist-pages
