@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {share,winner,changed,delta,correlation,mapColor,aggregate,report,type Totals,type Territory} from '../lib/comparison.ts';
+const totals=(votes:Record<string,number>,cast=100,eligible=125):Totals=>({votes,valid:Object.values(votes).reduce((a,b)=>a+b,0),cast,eligible,turnout:cast,abstention:eligible-cast,blank:5,null:10,otherInvalid:5});
+const city=(id:string,before:Totals|null,after:Totals|null):Territory=>({id,uf:'mg',name:id,before,after});
+test('group share uses valid votes; turnout and null votes have their own denominators',()=>{const t=totals({'13':40,'22':30,'15':10});assert.equal(share(t,'lula'),50);assert.equal(share(t,'third'),12.5);assert.equal(share(t,'null'),10);assert.equal(share(t,'turnout'),80);assert.equal(share(t,'nonValid'),20)});
+test('winner follows the individual candidate, not the summed third-way bloc',()=>{assert.equal(winner(totals({'13':40,'22':20,'15':25,'12':15})),'lula');assert.equal(winner(totals({'13':30,'22':30})),'tie')});
+test('map color belongs to current winner even when that winner lost share',()=>{const r=city('a',totals({'13':70,'22':30}),totals({'13':60,'22':40}));assert.equal(delta(r,'lula'),-10);assert.match(mapColor(r),/^hsl\(0 /);assert.notEqual(mapColor(r),mapColor(city('b',totals({'13':50,'22':50}),totals({'13':60,'22':40}))));assert.equal(mapColor(city('new',null,r.after)),'#475569')});
+test('aggregate rates weight votes instead of averaging city percentages',()=>{const a=totals({'13':90,'22':10},100),b=totals({'13':0,'22':10},10);assert.ok(Math.abs(share(aggregate([a,b]),'lula')!-9000/110)<1e-10)});
+test('Pearson handles inverse association, missing pairs and constant series',()=>{assert.equal(correlation([[10,90],[20,80],[30,70]]),-1);assert.equal(correlation([[10,20],[10,30],[10,40]]),null);assert.equal(correlation([[1,2],[2,3]]),null)});
+test('Spearman uses average ranks for ties',()=>{assert.equal(correlation([[1,2],[1,2],[3,4],[4,5]],'spearman'),1)});
+test('reports exclude unmatched places and order gains and losses in percentage points',()=>{const rows=[city('up',totals({'13':30,'22':70}),totals({'13':60,'22':40})),city('down',totals({'13':70,'22':30}),totals({'13':60,'22':40})),city('missing',null,totals({'13':99,'22':1}))];assert.equal(report(rows,'lula').gains[0].row.id,'up');assert.equal(report(rows,'lula').losses[0].row.id,'down');assert.equal(report(rows,'lula').gains.length,1)});
+
+test('a tie has no unique winner to mark as a leadership swap',()=>{assert.equal(changed(city('tie',totals({'13':50,'22':50}),totals({'13':60,'22':40}))),false);assert.equal(changed(city('flip',totals({'13':40,'22':60}),totals({'13':60,'22':40}))),true)});

@@ -31,6 +31,8 @@ jobs:
           python scripts/coletar-tse.py --output data --workers 16
           python scripts/gerar-snapshot.py --database data/tse_2026_1t.sqlite --output public/data
       - run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Salvar comparação presidencial 2022–2026
+        run: python scripts/comparison_data.py
       - run: python scripts/maps-pages.py
       - run: python scripts/gerar-cidades.py
       - run: node tests/snapshot-integration.mjs
