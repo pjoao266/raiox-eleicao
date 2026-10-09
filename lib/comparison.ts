@@ -42,4 +42,4 @@ export function correlation(points:[number,number][],method:'pearson'|'spearman'
 }
 export function report(rows:Territory[],metric:Metric,limit=10){const pairs=rows.map(row=>({row,value:delta(row,metric)})).filter((r):r is {row:Territory,value:number}=>r.value!==null);return {gains:pairs.filter(r=>r.value>0).sort((a,b)=>b.value-a.value||a.row.name.localeCompare(b.row.name,'pt-BR')).slice(0,limit),losses:pairs.filter(r=>r.value<0).sort((a,b)=>a.value-b.value||a.row.name.localeCompare(b.row.name,'pt-BR')).slice(0,limit)}}
 
-export function orderedChanges(rows:Territory[],metric:Metric){return rows.map(row=>({row,value:delta(row,metric)})).filter((r):r is {row:Territory,value:number}=>r.value!==null).sort((a,b)=>b.value-a.value||a.row.name.localeCompare(b.row.name,'pt-BR'))}
+export function orderedChanges(rows:Territory[],metric:Metric,order:'asc'|'desc'='desc'){return rows.map(row=>({row,value:delta(row,metric)})).filter((r):r is {row:Territory,value:number}=>r.value!==null).sort((a,b)=>(order==='desc'?b.value-a.value:a.value-b.value)||a.row.name.localeCompare(b.row.name,'pt-BR'))}
