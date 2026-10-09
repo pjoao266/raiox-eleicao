@@ -1,0 +1,19 @@
+'use client';
+import {useEffect,useState} from 'react';
+import {LoaderCircle,ChevronRight} from 'lucide-react';
+import {Sheet,SheetContent,SheetHeader,SheetTitle,SheetDescription} from '@/components/ui/sheet';
+import {ZoneDetails} from '@/components/zone-details';
+import {localCityResults,invalidateLocalData,type CandidateCityResult} from '@/lib/local-data';
+import {integer,percent,titleCase} from '@/lib/format';
+import type {City,Candidate,Row} from '@/lib/tse';
+export function CityDetails({city,candidate,onClose}:{city:City|null,candidate:Candidate|null,onClose:()=>void}){
+ const [results,setResults]=useState<CandidateCityResult[]>([]),[loading,setLoading]=useState(false),[error,setError]=useState(''),[loadedKey,setLoadedKey]=useState(''),[version,setVersion]=useState(0),[zone,setZone]=useState<CandidateCityResult|null>(null);
+ const key=city&&candidate?`${candidate.election}:${candidate.cargo}:${city.uf}:${city.code}`:'';
+ useEffect(()=>{if(!city||!candidate)return;let active=true;setLoading(true);setResults([]);setError('');setZone(null);
+ localCityResults(candidate.election,candidate.cargo,city).then(rows=>{if(active){setResults(rows);setLoadedKey(key)}}).catch(e=>{if(active)setError(e.message)}).finally(()=>{if(active)setLoading(false)});return()=>{active=false};
+ },[key,version]);
+ const busy=loading||loadedKey!==key;const zoneRow=city&&zone?.result?{...city,...zone.result} as Row:null;
+ return <><Sheet open={!!city} onOpenChange={open=>{if(!open){setZone(null);onClose()}}}><SheetContent className="w-full overflow-y-auto p-4 sm:p-6 sm:max-w-2xl"><SheetHeader className="p-0"><SheetTitle>{city?titleCase(city.name):''} · {city?.uf.toUpperCase()}</SheetTitle><SheetDescription>Votação completa do município · {candidate?.cargo==='1'?'Presidente':candidate?.cargo==='3'?'Governador':candidate?.cargo==='5'?'Senador':candidate?.cargo==='6'?'Deputado federal':candidate?.cargo==='7'?'Deputado estadual':'Deputado distrital'} · 1º turno de 2026</SheetDescription></SheetHeader>
+ {error?<div role="alert" className="mt-6 text-sm text-amber-200"><p>{error}</p><button onClick={()=>{invalidateLocalData();setVersion(v=>v+1)}} className="mt-3 rounded-lg border border-white/15 px-4 py-2">Tentar novamente</button></div>:busy?<div role="status" className="flex items-center justify-center gap-3 py-16 text-sm text-slate-400"><LoaderCircle className="animate-spin" size={22}/>Carregando todos os candidatos…</div>:<><p className="my-5 text-sm text-slate-400">{results.length} candidatos · percentual oficial do TSE. Clique em um candidato para ver as zonas.</p><div className="divide-y divide-white/10">{results.map(({candidate:c,result},i)=><button key={c.id} disabled={!result} onClick={()=>setZone({candidate:c,result})} className={`flex w-full items-center gap-3 py-4 text-left disabled:opacity-60 ${c.id===candidate?.id?'text-blue-200':''}`}><span className="w-6 shrink-0 text-xs text-slate-500">{i+1}</span><div className="min-w-0 flex-1"><p className="break-words text-sm font-medium leading-5">{titleCase(c.name)}</p><p className="mt-1 text-xs text-slate-400">{c.number} · {c.party}{result?.destination&&result.destination.toLowerCase()!=='válido'?` · ${result.destination}`:''}</p></div><div className="shrink-0 text-right"><p className="text-sm font-semibold tabular-nums">{result?percent(result.percentage):'Sem resultado'}</p>{result&&<p className="mt-1 text-xs tabular-nums text-slate-400">{integer(result.votes)} votos</p>}</div><ChevronRight size={14} className="shrink-0 text-slate-500"/></button>)}</div>{candidate?.cargo==='5'&&<p className="mt-5 text-xs leading-5 text-slate-400">Para senador, o percentual usa a regra oficial das duas vagas; os percentuais não devem ser interpretados como proporção de eleitores.</p>}</>}
+ </SheetContent></Sheet><ZoneDetails city={zoneRow} candidate={zone?.candidate||null} onClose={()=>setZone(null)}/></>;
+}

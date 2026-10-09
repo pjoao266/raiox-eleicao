@@ -31,7 +31,10 @@ jobs:
           python scripts/coletar-tse.py --output data --workers 16
           python scripts/gerar-snapshot.py --database data/tse_2026_1t.sqlite --output public/data
       - run: python scripts/maps-pages.py
+      - run: python scripts/gerar-cidades.py
       - run: node tests/snapshot-integration.mjs
+      - run: node tests/city-results-integration.mjs
+      - run: npx tsc --noEmit -p tsconfig.pages.json
       - name: Preservar dados fixos no repositório
         run: |
           git config user.name 'github-actions[bot]'

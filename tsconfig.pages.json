@@ -1,0 +1,1 @@
+{"extends":"./tsconfig.json","compilerOptions":{"incremental":false,"types":["vite/client","node"],"module":"ESNext","moduleResolution":"Bundler"},"include":["pages/**/*.ts","pages/**/*.tsx","app/page.tsx"],"exclude":["node_modules","dist-pages"]}
