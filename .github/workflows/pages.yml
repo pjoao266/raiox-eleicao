@@ -23,6 +23,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: npm install --ignore-scripts
+      - run: node --test tests/*.test.ts
       - name: Salvar base completa do primeiro turno
         if: hashFiles('public/data/catalog.json') == ''
         run: |
