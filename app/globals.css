@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility scrollbar-gutter-stable {
+  scrollbar-gutter: stable;
+}
+
+:root, .dark {
+ --background: #090f19; --foreground: #e6edf5; --card: #0e1825; --card-foreground: #e6edf5;
+ --popover: #111d2c; --popover-foreground: #e6edf5; --primary: #60a5fa; --primary-foreground: #071712;
+ --secondary: #162334; --secondary-foreground: #e6edf5; --muted: #132032; --muted-foreground: #8d9bad;
+ --accent: #1b2d40; --accent-foreground: #e6edf5; --destructive: #f09a7a; --border: #213041;
+ --input: #223246; --ring: #60a5fa; --radius: .5rem;
+ --chart-1: #60a5fa; --chart-2: #e8b965; --chart-3: #6899f2; --chart-4: #bd94e8; --chart-5: #7dd3fc;
+ --sidebar: #0e1825; --sidebar-foreground: #e6edf5; --sidebar-primary: #60a5fa; --sidebar-primary-foreground: #071712;
+ --sidebar-accent: #1b2d40; --sidebar-accent-foreground: #e6edf5; --sidebar-border: #213041; --sidebar-ring: #60a5fa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body { background: #090f19; color: #e6edf5; font-family: Arial, Helvetica, sans-serif; }
+.panel { border: 1px solid #ffffff12; border-radius: 8px; background-color: #0e1825; }
+.filter-label { font-size: 10px; letter-spacing: .13em; font-weight: 600; color: #94a3b8; }
+[data-slot="native-select-wrapper"] { width: 100%; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:not(:disabled) { cursor: pointer; }
+::selection { background: #60a5fa40; }

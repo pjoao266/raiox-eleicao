@@ -1,0 +1,1 @@
+import {geometry} from '@/lib/tse-fetch';export async function GET(r:Request){try{return Response.json(await geometry(new URL(r.url).searchParams.get('uf')||''))}catch(e){return Response.json({error:(e as Error).message},{status:503})}}
