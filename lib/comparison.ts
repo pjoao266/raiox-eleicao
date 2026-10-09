@@ -4,7 +4,10 @@ export type Totals={votes:Record<string,number>,eligible:number,turnout:number,a
 export type Territory={id:string,uf:string,name:string,code?:string,ibge?:string,before:Totals|null,after:Totals|null};
 export type ComparisonData={version:string,generatedAt:string,years:number[],turn:number,names:Record<string,Record<string,string>>,cities:Territory[],states:Territory[],national:Territory};
 export const blocs:Bloc[]=['lula','bolsonaro','third'];
-export const labels:Record<Metric,string>={lula:'Lula',bolsonaro:'Jair → Flávio',third:'Terceira via',blank:'Brancos',null:'Nulos',otherInvalid:'Demais não válidos',nonValid:'Total não válidos',valid:'Votos válidos',turnout:'Comparecimento',abstention:'Abstenção'};
+export const comparisonMetrics:Metric[]=['lula','bolsonaro','third','nonValid','turnout'];
+export type Transition='lulaToBolsonaro'|'bolsonaroToLula';
+export function transitionCities(rows:Territory[],direction:Transition):Territory[]{const [from,to]=direction==='lulaToBolsonaro'?['lula','bolsonaro']:['bolsonaro','lula'];return rows.filter(row=>winner(row.before)===from&&winner(row.after)===to)}
+export const labels:Record<Metric,string>={lula:'Lula',bolsonaro:"Bolsonaro's",third:'Terceira via',blank:'Brancos',null:'Nulos',otherInvalid:'Demais não válidos',nonValid:'Branco/Nulos',valid:'Votos válidos',turnout:'Comparecimento',abstention:'Abstenção'};
 export function bloc(number:string):Bloc{return number==='13'?'lula':number==='22'?'bolsonaro':'third'}
 export function share(t:Totals|null,metric:Metric):number|null{
  if(!t)return null;let count:number,denominator:number;
