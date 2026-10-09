@@ -1,0 +1,57 @@
+name: Publicar Raio-X Eleitoral
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm install --ignore-scripts
+      - name: Salvar base completa do primeiro turno
+        if: hashFiles('public/data/catalog.json') == ''
+        run: |
+          pip install aiohttp
+          python scripts/coletar-tse.py --output data --workers 16
+          python scripts/gerar-snapshot.py --database data/tse_2026_1t.sqlite --output public/data
+      - run: python scripts/maps-pages.py
+      - run: node tests/snapshot-integration.mjs
+      - name: Preservar dados fixos no repositório
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data public/maps
+          if ! git diff --cached --quiet; then
+            git commit -m 'Salva base municipal completa do TSE 2026 1T e mapas'
+            git push
+          fi
+      - run: node scripts/build-pages.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist-pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

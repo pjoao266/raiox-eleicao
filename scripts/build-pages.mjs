@@ -1,0 +1,1 @@
+import {build} from 'vite';import {rename,writeFile} from 'node:fs/promises';await build({configFile:'vite.pages.config.ts'});await rename('dist-pages/pages/index.html','dist-pages/index.html');await writeFile('dist-pages/.nojekyll','');
