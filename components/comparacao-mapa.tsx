@@ -13,7 +13,8 @@ function project(p: number[]) {
   return [p[0], -Math.log(Math.tan(Math.PI / 4 + p[1] * Math.PI / 360)) * 180 / Math.PI];
 }
 
-const IBGE_PARA_UF: Record<string, string> = Object.fromEntries(Object.entries(UFS).map(([uf, v]) => [v.id, uf]));
+// UFS usa siglas minúsculas; os dados de comparação usam maiúsculas (BA, SP...)
+const IBGE_PARA_UF: Record<string, string> = Object.fromEntries(Object.entries(UFS).map(([uf, v]) => [v.id, uf.toUpperCase()]));
 
 // Cor pelo vencedor entre Lula e Flávio; intensidade cresce conforme a % do vencedor (50% = tom claro, 70% = tom forte).
 function corDoEstado(r: UfResultado | undefined) {
