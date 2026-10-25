@@ -47,3 +47,8 @@ next-env.d.ts
 
 /data/
 **/__pycache__/
+
+# estado local da apuração ao vivo e build local
+ao_vivo_estado/
+dist-pages/
+package-lock.json
