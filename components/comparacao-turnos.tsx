@@ -18,6 +18,15 @@ type Dados = {gerado_em: string; anos: Record<string, Ano>};
 const CHAVE_BR = 'BR|Brasil (sem exterior)';
 const CHAVE_EXT = 'EXT|Exterior (total)';
 
+// Divisão só entre os dois candidatos: Lula + Flávio/Bolsonaro = 100%.
+const entreDois = (m: Metricas) => {
+  const tot = m.lula_votos + m.flavio_votos;
+  return tot ? (m.lula_votos / tot) * 100 : null;
+};
+const entreDoisOutro = (m: Metricas) => {
+  const tot = m.lula_votos + m.flavio_votos;
+  return tot ? (m.flavio_votos / tot) * 100 : null;
+};
 const pct = (n: number | null | undefined) => (n === null || n === undefined ? '—' : `${n.toLocaleString('pt-BR', {maximumFractionDigits: 2})}%`);
 const pp = (n: number | null | undefined) => (n === null || n === undefined ? '—' : `${n > 0 ? '+' : ''}${n.toLocaleString('pt-BR', {maximumFractionDigits: 2})} p.p.`);
 const limpa = (s: string) => s.replace(/�/g, '');
@@ -118,8 +127,8 @@ function ComparacaoTurnosConteudo() {
         {grupo && (
           <SimpleGrid cols={{base: 1, sm: 3}}>
             {[
-              {titulo: nomeLula, cor: '#dc2626', valor: grupo.turno2.lula_pct_aptos, antes: grupo.turno1.lula_pct_aptos, delta: grupo.lula?.delta_pp_total, bom: true},
-              {titulo: nomeOutro, cor: '#2563eb', valor: grupo.turno2.flavio_pct_aptos, antes: grupo.turno1.flavio_pct_aptos, delta: grupo.flavio?.delta_pp_total, bom: true},
+              {titulo: nomeLula, cor: '#dc2626', valor: entreDois(grupo.turno2), antes: entreDois(grupo.turno1), delta: (entreDois(grupo.turno2) ?? 0) - (entreDois(grupo.turno1) ?? 0), bom: true},
+              {titulo: nomeOutro, cor: '#2563eb', valor: entreDoisOutro(grupo.turno2), antes: entreDoisOutro(grupo.turno1), delta: (entreDoisOutro(grupo.turno2) ?? 0) - (entreDoisOutro(grupo.turno1) ?? 0), bom: true},
               {titulo: 'Abstenção', cor: '#64748b', valor: grupo.turno2.abstencao_pct, antes: grupo.turno1.abstencao_pct, delta: grupo.delta_abstencao_pp, bom: false},
             ].map(c => (
               <Paper key={c.titulo} withBorder p="md" radius="md" style={{borderLeft: `4px solid ${c.cor}`, background: 'rgba(15, 23, 42, 0.7)'}}>
@@ -159,7 +168,7 @@ function ComparacaoTurnosConteudo() {
             <Table striped highlightOnHover withTableBorder>
               <Table.Thead>
                 <Table.Tr>
-                  <Table.Th>Indicador (% dos aptos)</Table.Th>
+                  <Table.Th>Indicador</Table.Th>
                   <Table.Th>1º turno</Table.Th>
                   <Table.Th>2º turno</Table.Th>
                   <Table.Th>Variação</Table.Th>
@@ -167,22 +176,22 @@ function ComparacaoTurnosConteudo() {
               </Table.Thead>
               <Table.Tbody>
                 <Table.Tr>
-                  <Table.Td>Abstenção</Table.Td>
+                  <Table.Td>Abstenção (% dos aptos)</Table.Td>
                   <Table.Td>{pct(grupo.turno1.abstencao_pct)}</Table.Td>
                   <Table.Td>{pct(grupo.turno2.abstencao_pct)}</Table.Td>
                   <Table.Td>{pp(grupo.delta_abstencao_pp)}</Table.Td>
                 </Table.Tr>
                 <Table.Tr>
-                  <Table.Td>{nomeLula}</Table.Td>
-                  <Table.Td>{pct(grupo.turno1.lula_pct_aptos)}</Table.Td>
-                  <Table.Td>{pct(grupo.turno2.lula_pct_aptos)}</Table.Td>
-                  <Table.Td>{pp(grupo.lula?.delta_pp_total)}</Table.Td>
+                  <Table.Td>{nomeLula} (entre os dois)</Table.Td>
+                  <Table.Td>{pct(entreDois(grupo.turno1))}</Table.Td>
+                  <Table.Td>{pct(entreDois(grupo.turno2))}</Table.Td>
+                  <Table.Td>{pp((entreDois(grupo.turno2) ?? 0) - (entreDois(grupo.turno1) ?? 0))}</Table.Td>
                 </Table.Tr>
                 <Table.Tr>
-                  <Table.Td>{nomeOutro}</Table.Td>
-                  <Table.Td>{pct(grupo.turno1.flavio_pct_aptos)}</Table.Td>
-                  <Table.Td>{pct(grupo.turno2.flavio_pct_aptos)}</Table.Td>
-                  <Table.Td>{pp(grupo.flavio?.delta_pp_total)}</Table.Td>
+                  <Table.Td>{nomeOutro} (entre os dois)</Table.Td>
+                  <Table.Td>{pct(entreDoisOutro(grupo.turno1))}</Table.Td>
+                  <Table.Td>{pct(entreDoisOutro(grupo.turno2))}</Table.Td>
+                  <Table.Td>{pp((entreDoisOutro(grupo.turno2) ?? 0) - (entreDoisOutro(grupo.turno1) ?? 0))}</Table.Td>
                 </Table.Tr>
                 <Table.Tr>
                   <Table.Td>Outros candidatos</Table.Td>
@@ -203,7 +212,8 @@ function ComparacaoTurnosConteudo() {
               Troca de voto: {pp(grupo.flavio?.efeito_troca_pp)} · Comparecimento (abstenção): {pp(grupo.flavio?.efeito_comparecimento_pp)}
             </Text>
             <Text size="xs" c="dimmed" mt="sm">
-              Valores em pontos percentuais do eleitorado. A troca de voto é a mudança de voto entre quem compareceu nos dois turnos.
+              Lula e {nomeOutro} são divisão só entre os dois, então somam 100%. Abstenção é % dos eleitores aptos.
+              Na decomposição, os valores são em pontos percentuais do eleitorado. A troca de voto é a mudança de voto entre quem compareceu nos dois turnos.
             </Text>
           </Paper>
         )}
