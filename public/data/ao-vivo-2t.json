@@ -1,0 +1,2144 @@
+{
+ "atualizado_em": "2026-10-25T22:08:04+00:00",
+ "ano": 2026,
+ "turno": 2,
+ "fonte": "arquivo-urna do TSE (boletins de urna processados)",
+ "brasil": {
+  "secoes_total": 497897,
+  "secoes_totalizadas": 860,
+  "aptos": 253206,
+  "comparecimento": 201244,
+  "brancos": 1797,
+  "nulos": 3635,
+  "lula": 101569,
+  "flavio": 94243,
+  "outros": 0,
+  "pct_totalizado": 0.17,
+  "abstencao_pct": 20.52,
+  "lula_share": 51.87,
+  "flavio_share": 48.13
+ },
+ "exterior": {
+  "secoes_total": 1351,
+  "secoes_totalizadas": 775,
+  "aptos": 552636,
+  "comparecimento": 243197,
+  "brancos": 3268,
+  "nulos": 3378,
+  "lula": 141302,
+  "flavio": 95249,
+  "outros": 0,
+  "pct_totalizado": 57.36,
+  "abstencao_pct": 55.99,
+  "lula_share": 59.73,
+  "flavio_share": 40.27
+ },
+ "ufs": {
+  "AC": {
+   "secoes_total": 2270,
+   "secoes_totalizadas": 23,
+   "aptos": 5226,
+   "comparecimento": 3191,
+   "brancos": 14,
+   "nulos": 148,
+   "lula": 1185,
+   "flavio": 1844,
+   "outros": 0,
+   "pct_totalizado": 1.01,
+   "abstencao_pct": 38.94,
+   "lula_share": 39.12,
+   "flavio_share": 60.88
+  },
+  "AL": {
+   "secoes_total": 7101,
+   "secoes_totalizadas": 2,
+   "aptos": 704,
+   "comparecimento": 562,
+   "brancos": 3,
+   "nulos": 7,
+   "lula": 366,
+   "flavio": 186,
+   "outros": 0,
+   "pct_totalizado": 0.03,
+   "abstencao_pct": 20.17,
+   "lula_share": 66.3,
+   "flavio_share": 33.7
+  },
+  "AP": {
+   "secoes_total": 1914,
+   "secoes_totalizadas": 5,
+   "aptos": 1327,
+   "comparecimento": 827,
+   "brancos": 4,
+   "nulos": 4,
+   "lula": 482,
+   "flavio": 337,
+   "outros": 0,
+   "pct_totalizado": 0.26,
+   "abstencao_pct": 37.68,
+   "lula_share": 58.85,
+   "flavio_share": 41.15
+  },
+  "AM": {
+   "secoes_total": 8157,
+   "secoes_totalizadas": 126,
+   "aptos": 43181,
+   "comparecimento": 34237,
+   "brancos": 335,
+   "nulos": 776,
+   "lula": 16636,
+   "flavio": 16490,
+   "outros": 0,
+   "pct_totalizado": 1.54,
+   "abstencao_pct": 20.71,
+   "lula_share": 50.22,
+   "flavio_share": 49.78
+  },
+  "BA": {
+   "secoes_total": 35476,
+   "secoes_totalizadas": 8,
+   "aptos": 2383,
+   "comparecimento": 1928,
+   "brancos": 15,
+   "nulos": 61,
+   "lula": 1333,
+   "flavio": 519,
+   "outros": 0,
+   "pct_totalizado": 0.02,
+   "abstencao_pct": 19.09,
+   "lula_share": 71.98,
+   "flavio_share": 28.02
+  },
+  "CE": {
+   "secoes_total": 23765,
+   "secoes_totalizadas": 5,
+   "aptos": 1737,
+   "comparecimento": 1472,
+   "brancos": 17,
+   "nulos": 28,
+   "lula": 966,
+   "flavio": 461,
+   "outros": 0,
+   "pct_totalizado": 0.02,
+   "abstencao_pct": 15.26,
+   "lula_share": 67.69,
+   "flavio_share": 32.31
+  },
+  "DF": {
+   "secoes_total": 6969,
+   "secoes_totalizadas": 78,
+   "aptos": 24279,
+   "comparecimento": 20092,
+   "brancos": 227,
+   "nulos": 420,
+   "lula": 8855,
+   "flavio": 10590,
+   "outros": 0,
+   "pct_totalizado": 1.12,
+   "abstencao_pct": 17.25,
+   "lula_share": 45.54,
+   "flavio_share": 54.46
+  },
+  "ES": {
+   "secoes_total": 9844,
+   "secoes_totalizadas": 3,
+   "aptos": 832,
+   "comparecimento": 704,
+   "brancos": 10,
+   "nulos": 27,
+   "lula": 272,
+   "flavio": 395,
+   "outros": 0,
+   "pct_totalizado": 0.03,
+   "abstencao_pct": 15.38,
+   "lula_share": 40.78,
+   "flavio_share": 59.22
+  },
+  "GO": {
+   "secoes_total": 15686,
+   "secoes_totalizadas": 8,
+   "aptos": 2732,
+   "comparecimento": 2201,
+   "brancos": 11,
+   "nulos": 27,
+   "lula": 952,
+   "flavio": 1211,
+   "outros": 0,
+   "pct_totalizado": 0.05,
+   "abstencao_pct": 19.44,
+   "lula_share": 44.01,
+   "flavio_share": 55.99
+  },
+  "MA": {
+   "secoes_total": 18093,
+   "secoes_totalizadas": 24,
+   "aptos": 5312,
+   "comparecimento": 4159,
+   "brancos": 15,
+   "nulos": 59,
+   "lula": 3148,
+   "flavio": 937,
+   "outros": 0,
+   "pct_totalizado": 0.13,
+   "abstencao_pct": 21.71,
+   "lula_share": 77.06,
+   "flavio_share": 22.94
+  },
+  "MT": {
+   "secoes_total": 8287,
+   "secoes_totalizadas": 20,
+   "aptos": 4942,
+   "comparecimento": 3997,
+   "brancos": 24,
+   "nulos": 33,
+   "lula": 2000,
+   "flavio": 1940,
+   "outros": 0,
+   "pct_totalizado": 0.24,
+   "abstencao_pct": 19.12,
+   "lula_share": 50.76,
+   "flavio_share": 49.24
+  },
+  "MS": {
+   "secoes_total": 7106,
+   "secoes_totalizadas": 2,
+   "aptos": 444,
+   "comparecimento": 328,
+   "brancos": 0,
+   "nulos": 2,
+   "lula": 142,
+   "flavio": 184,
+   "outros": 0,
+   "pct_totalizado": 0.03,
+   "abstencao_pct": 26.13,
+   "lula_share": 43.56,
+   "flavio_share": 56.44
+  },
+  "MG": {
+   "secoes_total": 52062,
+   "secoes_totalizadas": 22,
+   "aptos": 6881,
+   "comparecimento": 5280,
+   "brancos": 54,
+   "nulos": 110,
+   "lula": 2370,
+   "flavio": 2746,
+   "outros": 0,
+   "pct_totalizado": 0.04,
+   "abstencao_pct": 23.27,
+   "lula_share": 46.33,
+   "flavio_share": 53.67
+  },
+  "PA": {
+   "secoes_total": 20827,
+   "secoes_totalizadas": 208,
+   "aptos": 55719,
+   "comparecimento": 42507,
+   "brancos": 213,
+   "nulos": 566,
+   "lula": 26935,
+   "flavio": 14793,
+   "outros": 0,
+   "pct_totalizado": 1.0,
+   "abstencao_pct": 23.71,
+   "lula_share": 64.55,
+   "flavio_share": 35.45
+  },
+  "PB": {
+   "secoes_total": 10712,
+   "secoes_totalizadas": 47,
+   "aptos": 14092,
+   "comparecimento": 11518,
+   "brancos": 83,
+   "nulos": 259,
+   "lula": 8412,
+   "flavio": 2764,
+   "outros": 0,
+   "pct_totalizado": 0.44,
+   "abstencao_pct": 18.27,
+   "lula_share": 75.27,
+   "flavio_share": 24.73
+  },
+  "PR": {
+   "secoes_total": 27142,
+   "secoes_totalizadas": 163,
+   "aptos": 48968,
+   "comparecimento": 40253,
+   "brancos": 505,
+   "nulos": 660,
+   "lula": 15239,
+   "flavio": 23849,
+   "outros": 0,
+   "pct_totalizado": 0.6,
+   "abstencao_pct": 17.8,
+   "lula_share": 38.99,
+   "flavio_share": 61.01
+  },
+  "PE": {
+   "secoes_total": 21418,
+   "secoes_totalizadas": 1,
+   "aptos": 296,
+   "comparecimento": 267,
+   "brancos": 3,
+   "nulos": 7,
+   "lula": 161,
+   "flavio": 96,
+   "outros": 0,
+   "pct_totalizado": 0.0,
+   "abstencao_pct": 9.8,
+   "lula_share": 62.65,
+   "flavio_share": 37.35
+  },
+  "PI": {
+   "secoes_total": 10225,
+   "secoes_totalizadas": 1,
+   "aptos": 279,
+   "comparecimento": 176,
+   "brancos": 0,
+   "nulos": 1,
+   "lula": 137,
+   "flavio": 38,
+   "outros": 0,
+   "pct_totalizado": 0.01,
+   "abstencao_pct": 36.92,
+   "lula_share": 78.29,
+   "flavio_share": 21.71
+  },
+  "RN": {
+   "secoes_total": 8115,
+   "secoes_totalizadas": 3,
+   "aptos": 878,
+   "comparecimento": 736,
+   "brancos": 6,
+   "nulos": 24,
+   "lula": 557,
+   "flavio": 149,
+   "outros": 0,
+   "pct_totalizado": 0.04,
+   "abstencao_pct": 16.17,
+   "lula_share": 78.9,
+   "flavio_share": 21.1
+  },
+  "RS": {
+   "secoes_total": 27547,
+   "secoes_totalizadas": 10,
+   "aptos": 2626,
+   "comparecimento": 2188,
+   "brancos": 27,
+   "nulos": 30,
+   "lula": 714,
+   "flavio": 1417,
+   "outros": 0,
+   "pct_totalizado": 0.04,
+   "abstencao_pct": 16.68,
+   "lula_share": 33.51,
+   "flavio_share": 66.49
+  },
+  "RO": {
+   "secoes_total": 4698,
+   "secoes_totalizadas": 31,
+   "aptos": 8734,
+   "comparecimento": 7020,
+   "brancos": 58,
+   "nulos": 80,
+   "lula": 2697,
+   "flavio": 4185,
+   "outros": 0,
+   "pct_totalizado": 0.66,
+   "abstencao_pct": 19.62,
+   "lula_share": 39.19,
+   "flavio_share": 60.81
+  },
+  "RR": {
+   "secoes_total": 1519,
+   "secoes_totalizadas": 5,
+   "aptos": 1405,
+   "comparecimento": 1117,
+   "brancos": 1,
+   "nulos": 5,
+   "lula": 765,
+   "flavio": 346,
+   "outros": 0,
+   "pct_totalizado": 0.33,
+   "abstencao_pct": 20.5,
+   "lula_share": 68.86,
+   "flavio_share": 31.14
+  },
+  "SC": {
+   "secoes_total": 17326,
+   "secoes_totalizadas": 53,
+   "aptos": 17292,
+   "comparecimento": 14137,
+   "brancos": 153,
+   "nulos": 214,
+   "lula": 6175,
+   "flavio": 7595,
+   "outros": 0,
+   "pct_totalizado": 0.31,
+   "abstencao_pct": 18.25,
+   "lula_share": 44.84,
+   "flavio_share": 55.16
+  },
+  "TO": {
+   "secoes_total": 4384,
+   "secoes_totalizadas": 12,
+   "aptos": 2937,
+   "comparecimento": 2347,
+   "brancos": 19,
+   "nulos": 87,
+   "lula": 1070,
+   "flavio": 1171,
+   "outros": 0,
+   "pct_totalizado": 0.27,
+   "abstencao_pct": 20.09,
+   "lula_share": 47.75,
+   "flavio_share": 52.25
+  },
+  "ZZ": {
+   "secoes_total": 1351,
+   "secoes_totalizadas": 775,
+   "aptos": 552636,
+   "comparecimento": 243197,
+   "brancos": 3268,
+   "nulos": 3378,
+   "lula": 141302,
+   "flavio": 95249,
+   "outros": 0,
+   "pct_totalizado": 57.36,
+   "abstencao_pct": 55.99,
+   "lula_share": 59.73,
+   "flavio_share": 40.27
+  },
+  "RJ": {
+   "secoes_total": 37675,
+   "secoes_totalizadas": 0,
+   "aptos": 0,
+   "comparecimento": 0,
+   "brancos": 0,
+   "nulos": 0,
+   "lula": 0,
+   "flavio": 0,
+   "outros": 0,
+   "pct_totalizado": 0.0,
+   "abstencao_pct": null,
+   "lula_share": null,
+   "flavio_share": null
+  },
+  "SP": {
+   "secoes_total": 103656,
+   "secoes_totalizadas": 0,
+   "aptos": 0,
+   "comparecimento": 0,
+   "brancos": 0,
+   "nulos": 0,
+   "lula": 0,
+   "flavio": 0,
+   "outros": 0,
+   "pct_totalizado": 0.0,
+   "abstencao_pct": null,
+   "lula_share": null,
+   "flavio_share": null
+  },
+  "SE": {
+   "secoes_total": 5923,
+   "secoes_totalizadas": 0,
+   "aptos": 0,
+   "comparecimento": 0,
+   "brancos": 0,
+   "nulos": 0,
+   "lula": 0,
+   "flavio": 0,
+   "outros": 0,
+   "pct_totalizado": 0.0,
+   "abstencao_pct": null,
+   "lula_share": null,
+   "flavio_share": null
+  }
+ },
+ "comparacao": {
+  "brasil": {
+   "secoes_pareadas": 860,
+   "turno1": {
+    "abstencao_pct": 19.79,
+    "lula_share": 49.83,
+    "flavio_share": 50.17,
+    "lula_votos": 90362,
+    "flavio_votos": 90982
+   },
+   "turno2": {
+    "abstencao_pct": 20.52,
+    "lula_share": 51.87,
+    "flavio_share": 48.13,
+    "lula_votos": 101569,
+    "flavio_votos": 94243
+   }
+  },
+  "exterior": {
+   "secoes_pareadas": 775,
+   "turno1": {
+    "abstencao_pct": 60.23,
+    "lula_share": 58.48,
+    "flavio_share": 41.52,
+    "lula_votos": 112217,
+    "flavio_votos": 79679
+   },
+   "turno2": {
+    "abstencao_pct": 55.99,
+    "lula_share": 59.73,
+    "flavio_share": 40.27,
+    "lula_votos": 141302,
+    "flavio_votos": 95249
+   }
+  }
+ },
+ "serie": [
+  {
+   "n": 1,
+   "emissao": "2026-10-25 15:00:48",
+   "lula2": 34.72,
+   "flavio2": 65.28,
+   "lula1": 30.05,
+   "flavio1": 69.95
+  },
+  {
+   "n": 9,
+   "emissao": "2026-10-25 15:01:56",
+   "lula2": 39.29,
+   "flavio2": 60.71,
+   "lula1": 37.57,
+   "flavio1": 62.43
+  },
+  {
+   "n": 17,
+   "emissao": "2026-10-25 15:02:32",
+   "lula2": 39.96,
+   "flavio2": 60.04,
+   "lula1": 39.86,
+   "flavio1": 60.14
+  },
+  {
+   "n": 25,
+   "emissao": "2026-10-25 15:03:02",
+   "lula2": 45.5,
+   "flavio2": 54.5,
+   "lula1": 42.8,
+   "flavio1": 57.2
+  },
+  {
+   "n": 33,
+   "emissao": "2026-10-25 16:00:40",
+   "lula2": 48.41,
+   "flavio2": 51.59,
+   "lula1": 45.03,
+   "flavio1": 54.97
+  },
+  {
+   "n": 41,
+   "emissao": "2026-10-25 16:00:52",
+   "lula2": 48.77,
+   "flavio2": 51.23,
+   "lula1": 45.33,
+   "flavio1": 54.67
+  },
+  {
+   "n": 49,
+   "emissao": "2026-10-25 16:00:59",
+   "lula2": 49.27,
+   "flavio2": 50.73,
+   "lula1": 45.77,
+   "flavio1": 54.23
+  },
+  {
+   "n": 57,
+   "emissao": "2026-10-25 16:01:08",
+   "lula2": 49.96,
+   "flavio2": 50.04,
+   "lula1": 46.68,
+   "flavio1": 53.32
+  },
+  {
+   "n": 65,
+   "emissao": "2026-10-25 16:01:19",
+   "lula2": 51.09,
+   "flavio2": 48.91,
+   "lula1": 47.99,
+   "flavio1": 52.01
+  },
+  {
+   "n": 73,
+   "emissao": "2026-10-25 16:01:28",
+   "lula2": 51.08,
+   "flavio2": 48.92,
+   "lula1": 47.94,
+   "flavio1": 52.06
+  },
+  {
+   "n": 81,
+   "emissao": "2026-10-25 16:01:40",
+   "lula2": 51.35,
+   "flavio2": 48.65,
+   "lula1": 48.21,
+   "flavio1": 51.79
+  },
+  {
+   "n": 89,
+   "emissao": "2026-10-25 16:01:44",
+   "lula2": 50.83,
+   "flavio2": 49.17,
+   "lula1": 47.53,
+   "flavio1": 52.47
+  },
+  {
+   "n": 97,
+   "emissao": "2026-10-25 16:01:51",
+   "lula2": 50.96,
+   "flavio2": 49.04,
+   "lula1": 47.93,
+   "flavio1": 52.07
+  },
+  {
+   "n": 105,
+   "emissao": "2026-10-25 16:01:57",
+   "lula2": 51.3,
+   "flavio2": 48.7,
+   "lula1": 48.35,
+   "flavio1": 51.65
+  },
+  {
+   "n": 113,
+   "emissao": "2026-10-25 16:02:03",
+   "lula2": 51.01,
+   "flavio2": 48.99,
+   "lula1": 48.05,
+   "flavio1": 51.95
+  },
+  {
+   "n": 121,
+   "emissao": "2026-10-25 16:02:13",
+   "lula2": 50.6,
+   "flavio2": 49.4,
+   "lula1": 47.63,
+   "flavio1": 52.37
+  },
+  {
+   "n": 129,
+   "emissao": "2026-10-25 16:02:20",
+   "lula2": 49.68,
+   "flavio2": 50.32,
+   "lula1": 46.7,
+   "flavio1": 53.3
+  },
+  {
+   "n": 137,
+   "emissao": "2026-10-25 16:02:26",
+   "lula2": 49.2,
+   "flavio2": 50.8,
+   "lula1": 46.27,
+   "flavio1": 53.73
+  },
+  {
+   "n": 145,
+   "emissao": "2026-10-25 16:02:35",
+   "lula2": 49.02,
+   "flavio2": 50.98,
+   "lula1": 46.08,
+   "flavio1": 53.92
+  },
+  {
+   "n": 153,
+   "emissao": "2026-10-25 16:02:44",
+   "lula2": 48.91,
+   "flavio2": 51.09,
+   "lula1": 46.02,
+   "flavio1": 53.98
+  },
+  {
+   "n": 161,
+   "emissao": "2026-10-25 16:02:51",
+   "lula2": 48.43,
+   "flavio2": 51.57,
+   "lula1": 45.64,
+   "flavio1": 54.36
+  },
+  {
+   "n": 169,
+   "emissao": "2026-10-25 16:03:01",
+   "lula2": 49.01,
+   "flavio2": 50.99,
+   "lula1": 46.18,
+   "flavio1": 53.82
+  },
+  {
+   "n": 177,
+   "emissao": "2026-10-25 16:03:10",
+   "lula2": 48.74,
+   "flavio2": 51.26,
+   "lula1": 45.91,
+   "flavio1": 54.09
+  },
+  {
+   "n": 185,
+   "emissao": "2026-10-25 16:03:24",
+   "lula2": 48.64,
+   "flavio2": 51.36,
+   "lula1": 45.79,
+   "flavio1": 54.21
+  },
+  {
+   "n": 193,
+   "emissao": "2026-10-25 16:03:35",
+   "lula2": 48.81,
+   "flavio2": 51.19,
+   "lula1": 46.04,
+   "flavio1": 53.96
+  },
+  {
+   "n": 201,
+   "emissao": "2026-10-25 16:04:05",
+   "lula2": 48.61,
+   "flavio2": 51.39,
+   "lula1": 45.8,
+   "flavio1": 54.2
+  },
+  {
+   "n": 209,
+   "emissao": "2026-10-25 17:00:25",
+   "lula2": 48.29,
+   "flavio2": 51.71,
+   "lula1": 45.48,
+   "flavio1": 54.52
+  },
+  {
+   "n": 217,
+   "emissao": "2026-10-25 17:00:35",
+   "lula2": 48.11,
+   "flavio2": 51.89,
+   "lula1": 45.31,
+   "flavio1": 54.69
+  },
+  {
+   "n": 225,
+   "emissao": "2026-10-25 17:00:44",
+   "lula2": 48.44,
+   "flavio2": 51.56,
+   "lula1": 45.69,
+   "flavio1": 54.31
+  },
+  {
+   "n": 233,
+   "emissao": "2026-10-25 17:00:50",
+   "lula2": 48.45,
+   "flavio2": 51.55,
+   "lula1": 45.75,
+   "flavio1": 54.25
+  },
+  {
+   "n": 241,
+   "emissao": "2026-10-25 17:01:00",
+   "lula2": 48.6,
+   "flavio2": 51.4,
+   "lula1": 45.94,
+   "flavio1": 54.06
+  },
+  {
+   "n": 249,
+   "emissao": "2026-10-25 17:01:09",
+   "lula2": 48.92,
+   "flavio2": 51.08,
+   "lula1": 46.31,
+   "flavio1": 53.69
+  },
+  {
+   "n": 257,
+   "emissao": "2026-10-25 17:01:14",
+   "lula2": 48.71,
+   "flavio2": 51.29,
+   "lula1": 46.11,
+   "flavio1": 53.89
+  },
+  {
+   "n": 265,
+   "emissao": "2026-10-25 17:01:21",
+   "lula2": 48.64,
+   "flavio2": 51.36,
+   "lula1": 46.06,
+   "flavio1": 53.94
+  },
+  {
+   "n": 273,
+   "emissao": "2026-10-25 17:01:27",
+   "lula2": 48.73,
+   "flavio2": 51.27,
+   "lula1": 46.18,
+   "flavio1": 53.82
+  },
+  {
+   "n": 281,
+   "emissao": "2026-10-25 17:01:31",
+   "lula2": 48.69,
+   "flavio2": 51.31,
+   "lula1": 46.18,
+   "flavio1": 53.82
+  },
+  {
+   "n": 289,
+   "emissao": "2026-10-25 17:01:37",
+   "lula2": 48.75,
+   "flavio2": 51.25,
+   "lula1": 46.24,
+   "flavio1": 53.76
+  },
+  {
+   "n": 297,
+   "emissao": "2026-10-25 17:01:41",
+   "lula2": 48.97,
+   "flavio2": 51.03,
+   "lula1": 46.43,
+   "flavio1": 53.57
+  },
+  {
+   "n": 305,
+   "emissao": "2026-10-25 17:01:44",
+   "lula2": 48.69,
+   "flavio2": 51.31,
+   "lula1": 46.22,
+   "flavio1": 53.78
+  },
+  {
+   "n": 313,
+   "emissao": "2026-10-25 17:01:46",
+   "lula2": 49.0,
+   "flavio2": 51.0,
+   "lula1": 46.51,
+   "flavio1": 53.49
+  },
+  {
+   "n": 321,
+   "emissao": "2026-10-25 17:01:47",
+   "lula2": 49.17,
+   "flavio2": 50.83,
+   "lula1": 46.67,
+   "flavio1": 53.33
+  },
+  {
+   "n": 329,
+   "emissao": "2026-10-25 17:01:49",
+   "lula2": 49.23,
+   "flavio2": 50.77,
+   "lula1": 46.7,
+   "flavio1": 53.3
+  },
+  {
+   "n": 337,
+   "emissao": "2026-10-25 17:01:51",
+   "lula2": 49.41,
+   "flavio2": 50.59,
+   "lula1": 46.89,
+   "flavio1": 53.11
+  },
+  {
+   "n": 345,
+   "emissao": "2026-10-25 17:01:52",
+   "lula2": 49.25,
+   "flavio2": 50.75,
+   "lula1": 46.72,
+   "flavio1": 53.28
+  },
+  {
+   "n": 353,
+   "emissao": "2026-10-25 17:01:54",
+   "lula2": 49.35,
+   "flavio2": 50.65,
+   "lula1": 46.87,
+   "flavio1": 53.13
+  },
+  {
+   "n": 361,
+   "emissao": "2026-10-25 17:01:55",
+   "lula2": 49.2,
+   "flavio2": 50.8,
+   "lula1": 46.74,
+   "flavio1": 53.26
+  },
+  {
+   "n": 369,
+   "emissao": "2026-10-25 17:01:58",
+   "lula2": 49.23,
+   "flavio2": 50.77,
+   "lula1": 46.8,
+   "flavio1": 53.2
+  },
+  {
+   "n": 377,
+   "emissao": "2026-10-25 17:02:01",
+   "lula2": 49.18,
+   "flavio2": 50.82,
+   "lula1": 46.74,
+   "flavio1": 53.26
+  },
+  {
+   "n": 385,
+   "emissao": "2026-10-25 17:02:01",
+   "lula2": 49.11,
+   "flavio2": 50.89,
+   "lula1": 46.67,
+   "flavio1": 53.33
+  },
+  {
+   "n": 393,
+   "emissao": "2026-10-25 17:02:03",
+   "lula2": 49.31,
+   "flavio2": 50.69,
+   "lula1": 46.9,
+   "flavio1": 53.1
+  },
+  {
+   "n": 401,
+   "emissao": "2026-10-25 17:02:04",
+   "lula2": 49.32,
+   "flavio2": 50.68,
+   "lula1": 46.93,
+   "flavio1": 53.07
+  },
+  {
+   "n": 409,
+   "emissao": "2026-10-25 17:02:06",
+   "lula2": 49.49,
+   "flavio2": 50.51,
+   "lula1": 47.13,
+   "flavio1": 52.87
+  },
+  {
+   "n": 417,
+   "emissao": "2026-10-25 17:02:06",
+   "lula2": 49.58,
+   "flavio2": 50.42,
+   "lula1": 47.19,
+   "flavio1": 52.81
+  },
+  {
+   "n": 425,
+   "emissao": "2026-10-25 17:02:08",
+   "lula2": 49.55,
+   "flavio2": 50.45,
+   "lula1": 47.17,
+   "flavio1": 52.83
+  },
+  {
+   "n": 433,
+   "emissao": "2026-10-25 17:02:10",
+   "lula2": 49.7,
+   "flavio2": 50.3,
+   "lula1": 47.32,
+   "flavio1": 52.68
+  },
+  {
+   "n": 441,
+   "emissao": "2026-10-25 17:02:12",
+   "lula2": 49.78,
+   "flavio2": 50.22,
+   "lula1": 47.4,
+   "flavio1": 52.6
+  },
+  {
+   "n": 449,
+   "emissao": "2026-10-25 17:02:13",
+   "lula2": 49.99,
+   "flavio2": 50.01,
+   "lula1": 47.59,
+   "flavio1": 52.41
+  },
+  {
+   "n": 457,
+   "emissao": "2026-10-25 17:02:14",
+   "lula2": 49.89,
+   "flavio2": 50.11,
+   "lula1": 47.49,
+   "flavio1": 52.51
+  },
+  {
+   "n": 465,
+   "emissao": "2026-10-25 17:02:16",
+   "lula2": 49.98,
+   "flavio2": 50.02,
+   "lula1": 47.59,
+   "flavio1": 52.41
+  },
+  {
+   "n": 473,
+   "emissao": "2026-10-25 17:02:17",
+   "lula2": 50.09,
+   "flavio2": 49.91,
+   "lula1": 47.72,
+   "flavio1": 52.28
+  },
+  {
+   "n": 481,
+   "emissao": "2026-10-25 17:02:18",
+   "lula2": 50.41,
+   "flavio2": 49.59,
+   "lula1": 48.06,
+   "flavio1": 51.94
+  },
+  {
+   "n": 489,
+   "emissao": "2026-10-25 17:02:19",
+   "lula2": 50.69,
+   "flavio2": 49.31,
+   "lula1": 48.34,
+   "flavio1": 51.66
+  },
+  {
+   "n": 497,
+   "emissao": "2026-10-25 17:02:21",
+   "lula2": 50.73,
+   "flavio2": 49.27,
+   "lula1": 48.37,
+   "flavio1": 51.63
+  },
+  {
+   "n": 505,
+   "emissao": "2026-10-25 17:02:22",
+   "lula2": 50.83,
+   "flavio2": 49.17,
+   "lula1": 48.49,
+   "flavio1": 51.51
+  },
+  {
+   "n": 513,
+   "emissao": "2026-10-25 17:02:23",
+   "lula2": 50.8,
+   "flavio2": 49.2,
+   "lula1": 48.48,
+   "flavio1": 51.52
+  },
+  {
+   "n": 521,
+   "emissao": "2026-10-25 17:02:24",
+   "lula2": 50.68,
+   "flavio2": 49.32,
+   "lula1": 48.35,
+   "flavio1": 51.65
+  },
+  {
+   "n": 529,
+   "emissao": "2026-10-25 17:02:25",
+   "lula2": 50.93,
+   "flavio2": 49.07,
+   "lula1": 48.6,
+   "flavio1": 51.4
+  },
+  {
+   "n": 537,
+   "emissao": "2026-10-25 17:02:26",
+   "lula2": 50.94,
+   "flavio2": 49.06,
+   "lula1": 48.59,
+   "flavio1": 51.41
+  },
+  {
+   "n": 545,
+   "emissao": "2026-10-25 17:02:27",
+   "lula2": 51.09,
+   "flavio2": 48.91,
+   "lula1": 48.75,
+   "flavio1": 51.25
+  },
+  {
+   "n": 553,
+   "emissao": "2026-10-25 17:02:28",
+   "lula2": 51.01,
+   "flavio2": 48.99,
+   "lula1": 48.67,
+   "flavio1": 51.33
+  },
+  {
+   "n": 561,
+   "emissao": "2026-10-25 17:02:30",
+   "lula2": 51.02,
+   "flavio2": 48.98,
+   "lula1": 48.68,
+   "flavio1": 51.32
+  },
+  {
+   "n": 569,
+   "emissao": "2026-10-25 17:02:32",
+   "lula2": 51.02,
+   "flavio2": 48.98,
+   "lula1": 48.71,
+   "flavio1": 51.29
+  },
+  {
+   "n": 577,
+   "emissao": "2026-10-25 17:02:33",
+   "lula2": 51.02,
+   "flavio2": 48.98,
+   "lula1": 48.71,
+   "flavio1": 51.29
+  },
+  {
+   "n": 585,
+   "emissao": "2026-10-25 17:02:35",
+   "lula2": 51.09,
+   "flavio2": 48.91,
+   "lula1": 48.81,
+   "flavio1": 51.19
+  },
+  {
+   "n": 593,
+   "emissao": "2026-10-25 17:02:36",
+   "lula2": 51.12,
+   "flavio2": 48.88,
+   "lula1": 48.84,
+   "flavio1": 51.16
+  },
+  {
+   "n": 601,
+   "emissao": "2026-10-25 17:02:36",
+   "lula2": 51.14,
+   "flavio2": 48.86,
+   "lula1": 48.85,
+   "flavio1": 51.15
+  },
+  {
+   "n": 609,
+   "emissao": "2026-10-25 17:02:38",
+   "lula2": 51.19,
+   "flavio2": 48.81,
+   "lula1": 48.88,
+   "flavio1": 51.12
+  },
+  {
+   "n": 617,
+   "emissao": "2026-10-25 17:02:40",
+   "lula2": 51.3,
+   "flavio2": 48.7,
+   "lula1": 48.99,
+   "flavio1": 51.01
+  },
+  {
+   "n": 625,
+   "emissao": "2026-10-25 17:02:41",
+   "lula2": 51.34,
+   "flavio2": 48.66,
+   "lula1": 49.05,
+   "flavio1": 50.95
+  },
+  {
+   "n": 633,
+   "emissao": "2026-10-25 17:02:42",
+   "lula2": 51.37,
+   "flavio2": 48.63,
+   "lula1": 49.11,
+   "flavio1": 50.89
+  },
+  {
+   "n": 641,
+   "emissao": "2026-10-25 17:02:43",
+   "lula2": 51.48,
+   "flavio2": 48.52,
+   "lula1": 49.24,
+   "flavio1": 50.76
+  },
+  {
+   "n": 649,
+   "emissao": "2026-10-25 17:02:44",
+   "lula2": 51.45,
+   "flavio2": 48.55,
+   "lula1": 49.21,
+   "flavio1": 50.79
+  },
+  {
+   "n": 657,
+   "emissao": "2026-10-25 17:02:47",
+   "lula2": 51.66,
+   "flavio2": 48.34,
+   "lula1": 49.41,
+   "flavio1": 50.59
+  },
+  {
+   "n": 665,
+   "emissao": "2026-10-25 17:02:50",
+   "lula2": 51.78,
+   "flavio2": 48.22,
+   "lula1": 49.52,
+   "flavio1": 50.48
+  },
+  {
+   "n": 673,
+   "emissao": "2026-10-25 17:02:51",
+   "lula2": 52.01,
+   "flavio2": 47.99,
+   "lula1": 49.76,
+   "flavio1": 50.24
+  },
+  {
+   "n": 681,
+   "emissao": "2026-10-25 17:02:54",
+   "lula2": 52.1,
+   "flavio2": 47.9,
+   "lula1": 49.86,
+   "flavio1": 50.14
+  },
+  {
+   "n": 689,
+   "emissao": "2026-10-25 17:02:56",
+   "lula2": 52.26,
+   "flavio2": 47.74,
+   "lula1": 50.03,
+   "flavio1": 49.97
+  },
+  {
+   "n": 697,
+   "emissao": "2026-10-25 17:02:57",
+   "lula2": 52.52,
+   "flavio2": 47.48,
+   "lula1": 50.31,
+   "flavio1": 49.69
+  },
+  {
+   "n": 705,
+   "emissao": "2026-10-25 17:02:59",
+   "lula2": 52.46,
+   "flavio2": 47.54,
+   "lula1": 50.25,
+   "flavio1": 49.75
+  },
+  {
+   "n": 713,
+   "emissao": "2026-10-25 17:03:01",
+   "lula2": 52.38,
+   "flavio2": 47.62,
+   "lula1": 50.18,
+   "flavio1": 49.82
+  },
+  {
+   "n": 721,
+   "emissao": "2026-10-25 17:03:02",
+   "lula2": 52.55,
+   "flavio2": 47.45,
+   "lula1": 50.37,
+   "flavio1": 49.63
+  },
+  {
+   "n": 729,
+   "emissao": "2026-10-25 17:03:04",
+   "lula2": 52.69,
+   "flavio2": 47.31,
+   "lula1": 50.51,
+   "flavio1": 49.49
+  },
+  {
+   "n": 737,
+   "emissao": "2026-10-25 17:03:06",
+   "lula2": 52.56,
+   "flavio2": 47.44,
+   "lula1": 50.39,
+   "flavio1": 49.61
+  },
+  {
+   "n": 745,
+   "emissao": "2026-10-25 17:03:08",
+   "lula2": 52.65,
+   "flavio2": 47.35,
+   "lula1": 50.49,
+   "flavio1": 49.51
+  },
+  {
+   "n": 753,
+   "emissao": "2026-10-25 17:03:09",
+   "lula2": 52.63,
+   "flavio2": 47.37,
+   "lula1": 50.48,
+   "flavio1": 49.52
+  },
+  {
+   "n": 761,
+   "emissao": "2026-10-25 17:03:11",
+   "lula2": 52.62,
+   "flavio2": 47.38,
+   "lula1": 50.49,
+   "flavio1": 49.51
+  },
+  {
+   "n": 769,
+   "emissao": "2026-10-25 17:03:13",
+   "lula2": 52.82,
+   "flavio2": 47.18,
+   "lula1": 50.69,
+   "flavio1": 49.31
+  },
+  {
+   "n": 777,
+   "emissao": "2026-10-25 17:03:17",
+   "lula2": 52.74,
+   "flavio2": 47.26,
+   "lula1": 50.63,
+   "flavio1": 49.37
+  },
+  {
+   "n": 785,
+   "emissao": "2026-10-25 17:03:19",
+   "lula2": 52.85,
+   "flavio2": 47.15,
+   "lula1": 50.72,
+   "flavio1": 49.28
+  },
+  {
+   "n": 793,
+   "emissao": "2026-10-25 17:03:21",
+   "lula2": 52.8,
+   "flavio2": 47.2,
+   "lula1": 50.67,
+   "flavio1": 49.33
+  },
+  {
+   "n": 801,
+   "emissao": "2026-10-25 17:03:24",
+   "lula2": 52.79,
+   "flavio2": 47.21,
+   "lula1": 50.65,
+   "flavio1": 49.35
+  },
+  {
+   "n": 809,
+   "emissao": "2026-10-25 17:03:26",
+   "lula2": 52.83,
+   "flavio2": 47.17,
+   "lula1": 50.68,
+   "flavio1": 49.32
+  },
+  {
+   "n": 817,
+   "emissao": "2026-10-25 17:03:30",
+   "lula2": 52.82,
+   "flavio2": 47.18,
+   "lula1": 50.67,
+   "flavio1": 49.33
+  },
+  {
+   "n": 825,
+   "emissao": "2026-10-25 17:03:33",
+   "lula2": 52.73,
+   "flavio2": 47.27,
+   "lula1": 50.6,
+   "flavio1": 49.4
+  },
+  {
+   "n": 833,
+   "emissao": "2026-10-25 17:03:38",
+   "lula2": 52.66,
+   "flavio2": 47.34,
+   "lula1": 50.55,
+   "flavio1": 49.45
+  },
+  {
+   "n": 841,
+   "emissao": "2026-10-25 17:03:41",
+   "lula2": 52.78,
+   "flavio2": 47.22,
+   "lula1": 50.67,
+   "flavio1": 49.33
+  },
+  {
+   "n": 849,
+   "emissao": "2026-10-25 17:03:43",
+   "lula2": 52.86,
+   "flavio2": 47.14,
+   "lula1": 50.77,
+   "flavio1": 49.23
+  },
+  {
+   "n": 857,
+   "emissao": "2026-10-25 17:03:46",
+   "lula2": 52.88,
+   "flavio2": 47.12,
+   "lula1": 50.8,
+   "flavio1": 49.2
+  },
+  {
+   "n": 865,
+   "emissao": "2026-10-25 17:03:49",
+   "lula2": 52.84,
+   "flavio2": 47.16,
+   "lula1": 50.77,
+   "flavio1": 49.23
+  },
+  {
+   "n": 873,
+   "emissao": "2026-10-25 17:03:52",
+   "lula2": 52.74,
+   "flavio2": 47.26,
+   "lula1": 50.69,
+   "flavio1": 49.31
+  },
+  {
+   "n": 881,
+   "emissao": "2026-10-25 17:03:55",
+   "lula2": 52.74,
+   "flavio2": 47.26,
+   "lula1": 50.7,
+   "flavio1": 49.3
+  },
+  {
+   "n": 889,
+   "emissao": "2026-10-25 17:04:01",
+   "lula2": 52.75,
+   "flavio2": 47.25,
+   "lula1": 50.74,
+   "flavio1": 49.26
+  },
+  {
+   "n": 897,
+   "emissao": "2026-10-25 17:04:05",
+   "lula2": 52.87,
+   "flavio2": 47.13,
+   "lula1": 50.86,
+   "flavio1": 49.14
+  },
+  {
+   "n": 905,
+   "emissao": "2026-10-25 17:04:10",
+   "lula2": 52.75,
+   "flavio2": 47.25,
+   "lula1": 50.76,
+   "flavio1": 49.24
+  },
+  {
+   "n": 913,
+   "emissao": "2026-10-25 17:04:13",
+   "lula2": 52.76,
+   "flavio2": 47.24,
+   "lula1": 50.76,
+   "flavio1": 49.24
+  },
+  {
+   "n": 921,
+   "emissao": "2026-10-25 17:04:15",
+   "lula2": 52.69,
+   "flavio2": 47.31,
+   "lula1": 50.71,
+   "flavio1": 49.29
+  },
+  {
+   "n": 929,
+   "emissao": "2026-10-25 17:04:20",
+   "lula2": 52.79,
+   "flavio2": 47.21,
+   "lula1": 50.83,
+   "flavio1": 49.17
+  },
+  {
+   "n": 937,
+   "emissao": "2026-10-25 17:04:24",
+   "lula2": 52.86,
+   "flavio2": 47.14,
+   "lula1": 50.89,
+   "flavio1": 49.11
+  },
+  {
+   "n": 945,
+   "emissao": "2026-10-25 17:04:27",
+   "lula2": 53.05,
+   "flavio2": 46.95,
+   "lula1": 51.1,
+   "flavio1": 48.9
+  },
+  {
+   "n": 953,
+   "emissao": "2026-10-25 17:04:31",
+   "lula2": 52.97,
+   "flavio2": 47.03,
+   "lula1": 51.02,
+   "flavio1": 48.98
+  },
+  {
+   "n": 961,
+   "emissao": "2026-10-25 17:04:36",
+   "lula2": 52.85,
+   "flavio2": 47.15,
+   "lula1": 50.92,
+   "flavio1": 49.08
+  },
+  {
+   "n": 969,
+   "emissao": "2026-10-25 17:04:40",
+   "lula2": 52.93,
+   "flavio2": 47.07,
+   "lula1": 51.0,
+   "flavio1": 49.0
+  },
+  {
+   "n": 977,
+   "emissao": "2026-10-25 17:04:45",
+   "lula2": 52.93,
+   "flavio2": 47.07,
+   "lula1": 51.01,
+   "flavio1": 48.99
+  },
+  {
+   "n": 985,
+   "emissao": "2026-10-25 17:04:47",
+   "lula2": 52.9,
+   "flavio2": 47.1,
+   "lula1": 50.98,
+   "flavio1": 49.02
+  },
+  {
+   "n": 993,
+   "emissao": "2026-10-25 17:04:51",
+   "lula2": 52.93,
+   "flavio2": 47.07,
+   "lula1": 51.01,
+   "flavio1": 48.99
+  },
+  {
+   "n": 1001,
+   "emissao": "2026-10-25 17:04:54",
+   "lula2": 53.04,
+   "flavio2": 46.96,
+   "lula1": 51.13,
+   "flavio1": 48.87
+  },
+  {
+   "n": 1009,
+   "emissao": "2026-10-25 17:04:58",
+   "lula2": 53.08,
+   "flavio2": 46.92,
+   "lula1": 51.17,
+   "flavio1": 48.83
+  },
+  {
+   "n": 1017,
+   "emissao": "2026-10-25 17:05:07",
+   "lula2": 53.26,
+   "flavio2": 46.74,
+   "lula1": 51.34,
+   "flavio1": 48.66
+  },
+  {
+   "n": 1025,
+   "emissao": "2026-10-25 17:05:11",
+   "lula2": 53.32,
+   "flavio2": 46.68,
+   "lula1": 51.4,
+   "flavio1": 48.6
+  },
+  {
+   "n": 1033,
+   "emissao": "2026-10-25 17:05:15",
+   "lula2": 53.38,
+   "flavio2": 46.62,
+   "lula1": 51.46,
+   "flavio1": 48.54
+  },
+  {
+   "n": 1041,
+   "emissao": "2026-10-25 17:05:18",
+   "lula2": 53.45,
+   "flavio2": 46.55,
+   "lula1": 51.52,
+   "flavio1": 48.48
+  },
+  {
+   "n": 1049,
+   "emissao": "2026-10-25 17:05:23",
+   "lula2": 53.44,
+   "flavio2": 46.56,
+   "lula1": 51.52,
+   "flavio1": 48.48
+  },
+  {
+   "n": 1057,
+   "emissao": "2026-10-25 17:05:26",
+   "lula2": 53.45,
+   "flavio2": 46.55,
+   "lula1": 51.52,
+   "flavio1": 48.48
+  },
+  {
+   "n": 1065,
+   "emissao": "2026-10-25 17:05:33",
+   "lula2": 53.54,
+   "flavio2": 46.46,
+   "lula1": 51.61,
+   "flavio1": 48.39
+  },
+  {
+   "n": 1073,
+   "emissao": "2026-10-25 17:05:40",
+   "lula2": 53.6,
+   "flavio2": 46.4,
+   "lula1": 51.66,
+   "flavio1": 48.34
+  },
+  {
+   "n": 1081,
+   "emissao": "2026-10-25 17:05:44",
+   "lula2": 53.7,
+   "flavio2": 46.3,
+   "lula1": 51.76,
+   "flavio1": 48.24
+  },
+  {
+   "n": 1089,
+   "emissao": "2026-10-25 17:05:53",
+   "lula2": 53.77,
+   "flavio2": 46.23,
+   "lula1": 51.85,
+   "flavio1": 48.15
+  },
+  {
+   "n": 1097,
+   "emissao": "2026-10-25 17:05:56",
+   "lula2": 53.97,
+   "flavio2": 46.03,
+   "lula1": 52.04,
+   "flavio1": 47.96
+  },
+  {
+   "n": 1105,
+   "emissao": "2026-10-25 17:06:05",
+   "lula2": 54.02,
+   "flavio2": 45.98,
+   "lula1": 52.1,
+   "flavio1": 47.9
+  },
+  {
+   "n": 1113,
+   "emissao": "2026-10-25 17:06:12",
+   "lula2": 54.07,
+   "flavio2": 45.93,
+   "lula1": 52.15,
+   "flavio1": 47.85
+  },
+  {
+   "n": 1121,
+   "emissao": "2026-10-25 17:06:21",
+   "lula2": 54.13,
+   "flavio2": 45.87,
+   "lula1": 52.2,
+   "flavio1": 47.8
+  },
+  {
+   "n": 1129,
+   "emissao": "2026-10-25 17:06:26",
+   "lula2": 54.09,
+   "flavio2": 45.91,
+   "lula1": 52.17,
+   "flavio1": 47.83
+  },
+  {
+   "n": 1137,
+   "emissao": "2026-10-25 17:06:32",
+   "lula2": 54.11,
+   "flavio2": 45.89,
+   "lula1": 52.2,
+   "flavio1": 47.8
+  },
+  {
+   "n": 1145,
+   "emissao": "2026-10-25 17:06:36",
+   "lula2": 54.14,
+   "flavio2": 45.86,
+   "lula1": 52.23,
+   "flavio1": 47.77
+  },
+  {
+   "n": 1153,
+   "emissao": "2026-10-25 17:06:48",
+   "lula2": 54.21,
+   "flavio2": 45.79,
+   "lula1": 52.3,
+   "flavio1": 47.7
+  },
+  {
+   "n": 1161,
+   "emissao": "2026-10-25 17:06:56",
+   "lula2": 54.2,
+   "flavio2": 45.8,
+   "lula1": 52.3,
+   "flavio1": 47.7
+  },
+  {
+   "n": 1169,
+   "emissao": "2026-10-25 17:07:05",
+   "lula2": 54.24,
+   "flavio2": 45.76,
+   "lula1": 52.34,
+   "flavio1": 47.66
+  },
+  {
+   "n": 1177,
+   "emissao": "2026-10-25 17:07:11",
+   "lula2": 54.29,
+   "flavio2": 45.71,
+   "lula1": 52.38,
+   "flavio1": 47.62
+  },
+  {
+   "n": 1185,
+   "emissao": "2026-10-25 17:07:17",
+   "lula2": 54.22,
+   "flavio2": 45.78,
+   "lula1": 52.32,
+   "flavio1": 47.68
+  },
+  {
+   "n": 1193,
+   "emissao": "2026-10-25 17:07:26",
+   "lula2": 54.31,
+   "flavio2": 45.69,
+   "lula1": 52.41,
+   "flavio1": 47.59
+  },
+  {
+   "n": 1201,
+   "emissao": "2026-10-25 17:07:33",
+   "lula2": 54.38,
+   "flavio2": 45.62,
+   "lula1": 52.48,
+   "flavio1": 47.52
+  },
+  {
+   "n": 1209,
+   "emissao": "2026-10-25 17:07:41",
+   "lula2": 54.49,
+   "flavio2": 45.51,
+   "lula1": 52.6,
+   "flavio1": 47.4
+  },
+  {
+   "n": 1217,
+   "emissao": "2026-10-25 17:07:51",
+   "lula2": 54.53,
+   "flavio2": 45.47,
+   "lula1": 52.64,
+   "flavio1": 47.36
+  },
+  {
+   "n": 1225,
+   "emissao": "2026-10-25 17:08:01",
+   "lula2": 54.5,
+   "flavio2": 45.5,
+   "lula1": 52.63,
+   "flavio1": 47.37
+  },
+  {
+   "n": 1233,
+   "emissao": "2026-10-25 17:08:11",
+   "lula2": 54.45,
+   "flavio2": 45.55,
+   "lula1": 52.59,
+   "flavio1": 47.41
+  },
+  {
+   "n": 1241,
+   "emissao": "2026-10-25 17:08:19",
+   "lula2": 54.52,
+   "flavio2": 45.48,
+   "lula1": 52.65,
+   "flavio1": 47.35
+  },
+  {
+   "n": 1249,
+   "emissao": "2026-10-25 17:08:28",
+   "lula2": 54.52,
+   "flavio2": 45.48,
+   "lula1": 52.65,
+   "flavio1": 47.35
+  },
+  {
+   "n": 1257,
+   "emissao": "2026-10-25 17:08:38",
+   "lula2": 54.31,
+   "flavio2": 45.69,
+   "lula1": 52.45,
+   "flavio1": 47.55
+  },
+  {
+   "n": 1265,
+   "emissao": "2026-10-25 17:08:51",
+   "lula2": 54.4,
+   "flavio2": 45.6,
+   "lula1": 52.54,
+   "flavio1": 47.46
+  },
+  {
+   "n": 1273,
+   "emissao": "2026-10-25 17:09:07",
+   "lula2": 54.49,
+   "flavio2": 45.51,
+   "lula1": 52.62,
+   "flavio1": 47.38
+  },
+  {
+   "n": 1281,
+   "emissao": "2026-10-25 17:09:20",
+   "lula2": 54.6,
+   "flavio2": 45.4,
+   "lula1": 52.73,
+   "flavio1": 47.27
+  },
+  {
+   "n": 1289,
+   "emissao": "2026-10-25 17:09:38",
+   "lula2": 54.61,
+   "flavio2": 45.39,
+   "lula1": 52.74,
+   "flavio1": 47.26
+  },
+  {
+   "n": 1297,
+   "emissao": "2026-10-25 17:09:47",
+   "lula2": 54.57,
+   "flavio2": 45.43,
+   "lula1": 52.7,
+   "flavio1": 47.3
+  },
+  {
+   "n": 1305,
+   "emissao": "2026-10-25 17:09:54",
+   "lula2": 54.71,
+   "flavio2": 45.29,
+   "lula1": 52.84,
+   "flavio1": 47.16
+  },
+  {
+   "n": 1313,
+   "emissao": "2026-10-25 17:10:01",
+   "lula2": 54.83,
+   "flavio2": 45.17,
+   "lula1": 52.96,
+   "flavio1": 47.04
+  },
+  {
+   "n": 1321,
+   "emissao": "2026-10-25 17:10:11",
+   "lula2": 54.88,
+   "flavio2": 45.12,
+   "lula1": 53.02,
+   "flavio1": 46.98
+  },
+  {
+   "n": 1329,
+   "emissao": "2026-10-25 17:10:22",
+   "lula2": 54.9,
+   "flavio2": 45.1,
+   "lula1": 53.05,
+   "flavio1": 46.95
+  },
+  {
+   "n": 1337,
+   "emissao": "2026-10-25 17:10:35",
+   "lula2": 54.96,
+   "flavio2": 45.04,
+   "lula1": 53.11,
+   "flavio1": 46.89
+  },
+  {
+   "n": 1345,
+   "emissao": "2026-10-25 17:10:41",
+   "lula2": 54.94,
+   "flavio2": 45.06,
+   "lula1": 53.09,
+   "flavio1": 46.91
+  },
+  {
+   "n": 1353,
+   "emissao": "2026-10-25 17:10:53",
+   "lula2": 55.02,
+   "flavio2": 44.98,
+   "lula1": 53.18,
+   "flavio1": 46.82
+  },
+  {
+   "n": 1361,
+   "emissao": "2026-10-25 17:11:03",
+   "lula2": 55.06,
+   "flavio2": 44.94,
+   "lula1": 53.22,
+   "flavio1": 46.78
+  },
+  {
+   "n": 1369,
+   "emissao": "2026-10-25 17:11:09",
+   "lula2": 55.07,
+   "flavio2": 44.93,
+   "lula1": 53.22,
+   "flavio1": 46.78
+  },
+  {
+   "n": 1377,
+   "emissao": "2026-10-25 17:11:16",
+   "lula2": 55.16,
+   "flavio2": 44.84,
+   "lula1": 53.3,
+   "flavio1": 46.7
+  },
+  {
+   "n": 1385,
+   "emissao": "2026-10-25 17:11:25",
+   "lula2": 55.26,
+   "flavio2": 44.74,
+   "lula1": 53.41,
+   "flavio1": 46.59
+  },
+  {
+   "n": 1393,
+   "emissao": "2026-10-25 17:11:34",
+   "lula2": 55.29,
+   "flavio2": 44.71,
+   "lula1": 53.44,
+   "flavio1": 46.56
+  },
+  {
+   "n": 1401,
+   "emissao": "2026-10-25 17:11:45",
+   "lula2": 55.32,
+   "flavio2": 44.68,
+   "lula1": 53.46,
+   "flavio1": 46.54
+  },
+  {
+   "n": 1409,
+   "emissao": "2026-10-25 17:12:01",
+   "lula2": 55.38,
+   "flavio2": 44.62,
+   "lula1": 53.51,
+   "flavio1": 46.49
+  },
+  {
+   "n": 1417,
+   "emissao": "2026-10-25 17:12:06",
+   "lula2": 55.4,
+   "flavio2": 44.6,
+   "lula1": 53.54,
+   "flavio1": 46.46
+  },
+  {
+   "n": 1425,
+   "emissao": "2026-10-25 17:12:12",
+   "lula2": 55.44,
+   "flavio2": 44.56,
+   "lula1": 53.57,
+   "flavio1": 46.43
+  },
+  {
+   "n": 1433,
+   "emissao": "2026-10-25 17:12:20",
+   "lula2": 55.49,
+   "flavio2": 44.51,
+   "lula1": 53.63,
+   "flavio1": 46.37
+  },
+  {
+   "n": 1441,
+   "emissao": "2026-10-25 17:12:30",
+   "lula2": 55.57,
+   "flavio2": 44.43,
+   "lula1": 53.72,
+   "flavio1": 46.28
+  },
+  {
+   "n": 1449,
+   "emissao": "2026-10-25 17:12:39",
+   "lula2": 55.58,
+   "flavio2": 44.42,
+   "lula1": 53.71,
+   "flavio1": 46.29
+  },
+  {
+   "n": 1457,
+   "emissao": "2026-10-25 17:12:52",
+   "lula2": 55.6,
+   "flavio2": 44.4,
+   "lula1": 53.73,
+   "flavio1": 46.27
+  },
+  {
+   "n": 1465,
+   "emissao": "2026-10-25 17:12:56",
+   "lula2": 55.65,
+   "flavio2": 44.35,
+   "lula1": 53.79,
+   "flavio1": 46.21
+  },
+  {
+   "n": 1473,
+   "emissao": "2026-10-25 17:13:07",
+   "lula2": 55.69,
+   "flavio2": 44.31,
+   "lula1": 53.81,
+   "flavio1": 46.19
+  },
+  {
+   "n": 1481,
+   "emissao": "2026-10-25 17:13:18",
+   "lula2": 55.69,
+   "flavio2": 44.31,
+   "lula1": 53.81,
+   "flavio1": 46.19
+  },
+  {
+   "n": 1489,
+   "emissao": "2026-10-25 17:13:25",
+   "lula2": 55.73,
+   "flavio2": 44.27,
+   "lula1": 53.85,
+   "flavio1": 46.15
+  },
+  {
+   "n": 1497,
+   "emissao": "2026-10-25 17:13:41",
+   "lula2": 55.77,
+   "flavio2": 44.23,
+   "lula1": 53.89,
+   "flavio1": 46.11
+  },
+  {
+   "n": 1505,
+   "emissao": "2026-10-25 17:13:48",
+   "lula2": 55.78,
+   "flavio2": 44.22,
+   "lula1": 53.89,
+   "flavio1": 46.11
+  },
+  {
+   "n": 1513,
+   "emissao": "2026-10-25 17:13:56",
+   "lula2": 55.8,
+   "flavio2": 44.2,
+   "lula1": 53.91,
+   "flavio1": 46.09
+  },
+  {
+   "n": 1521,
+   "emissao": "2026-10-25 17:14:08",
+   "lula2": 55.79,
+   "flavio2": 44.21,
+   "lula1": 53.9,
+   "flavio1": 46.1
+  },
+  {
+   "n": 1529,
+   "emissao": "2026-10-25 17:14:13",
+   "lula2": 55.8,
+   "flavio2": 44.2,
+   "lula1": 53.91,
+   "flavio1": 46.09
+  },
+  {
+   "n": 1537,
+   "emissao": "2026-10-25 17:14:21",
+   "lula2": 55.83,
+   "flavio2": 44.17,
+   "lula1": 53.94,
+   "flavio1": 46.06
+  },
+  {
+   "n": 1545,
+   "emissao": "2026-10-25 17:14:38",
+   "lula2": 55.88,
+   "flavio2": 44.12,
+   "lula1": 54.0,
+   "flavio1": 46.0
+  },
+  {
+   "n": 1553,
+   "emissao": "2026-10-25 17:15:02",
+   "lula2": 55.92,
+   "flavio2": 44.08,
+   "lula1": 54.03,
+   "flavio1": 45.97
+  },
+  {
+   "n": 1561,
+   "emissao": "2026-10-25 17:15:24",
+   "lula2": 55.95,
+   "flavio2": 44.05,
+   "lula1": 54.05,
+   "flavio1": 45.95
+  },
+  {
+   "n": 1569,
+   "emissao": "2026-10-25 17:15:53",
+   "lula2": 55.92,
+   "flavio2": 44.08,
+   "lula1": 54.03,
+   "flavio1": 45.97
+  },
+  {
+   "n": 1577,
+   "emissao": "2026-10-25 17:16:43",
+   "lula2": 55.93,
+   "flavio2": 44.07,
+   "lula1": 54.05,
+   "flavio1": 45.95
+  },
+  {
+   "n": 1585,
+   "emissao": "2026-10-25 17:17:12",
+   "lula2": 56.0,
+   "flavio2": 44.0,
+   "lula1": 54.12,
+   "flavio1": 45.88
+  },
+  {
+   "n": 1593,
+   "emissao": "2026-10-25 17:17:35",
+   "lula2": 56.06,
+   "flavio2": 43.94,
+   "lula1": 54.17,
+   "flavio1": 45.83
+  },
+  {
+   "n": 1601,
+   "emissao": "2026-10-25 17:18:01",
+   "lula2": 56.09,
+   "flavio2": 43.91,
+   "lula1": 54.19,
+   "flavio1": 45.81
+  },
+  {
+   "n": 1609,
+   "emissao": "2026-10-25 17:18:52",
+   "lula2": 56.16,
+   "flavio2": 43.84,
+   "lula1": 54.26,
+   "flavio1": 45.74
+  },
+  {
+   "n": 1617,
+   "emissao": "2026-10-25 17:20:13",
+   "lula2": 56.21,
+   "flavio2": 43.79,
+   "lula1": 54.31,
+   "flavio1": 45.69
+  },
+  {
+   "n": 1625,
+   "emissao": "2026-10-25 17:22:00",
+   "lula2": 56.13,
+   "flavio2": 43.87,
+   "lula1": 54.23,
+   "flavio1": 45.77
+  },
+  {
+   "n": 1633,
+   "emissao": "2026-10-25 18:09:36",
+   "lula2": 56.17,
+   "flavio2": 43.83,
+   "lula1": 54.27,
+   "flavio1": 45.73
+  },
+  {
+   "n": 1635,
+   "emissao": "2026-10-25 18:16:46",
+   "lula2": 56.17,
+   "flavio2": 43.83,
+   "lula1": 54.28,
+   "flavio1": 45.72
+  }
+ ]
+}
