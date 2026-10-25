@@ -1,0 +1,259 @@
+{
+ "ano": 2026,
+ "turno": 1,
+ "fonte": "boletins de urna (saida/uf_2026_1.csv)",
+ "uf": {
+  "AC": {
+   "secoes": 2270,
+   "aptos": 613742,
+   "comparecimento": 488330,
+   "abstencao_pct": 20.43,
+   "lula_pct": 27.6,
+   "flavio_pct": 62.01,
+   "lula_share": 30.8
+  },
+  "AL": {
+   "secoes": 7101,
+   "aptos": 2442126,
+   "comparecimento": 1938428,
+   "abstencao_pct": 20.63,
+   "lula_pct": 51.35,
+   "flavio_pct": 37.95,
+   "lula_share": 57.5
+  },
+  "AM": {
+   "secoes": 8157,
+   "aptos": 2798611,
+   "comparecimento": 2234549,
+   "abstencao_pct": 20.16,
+   "lula_pct": 46.85,
+   "flavio_pct": 43.71,
+   "lula_share": 51.73
+  },
+  "AP": {
+   "secoes": 1914,
+   "aptos": 576988,
+   "comparecimento": 476562,
+   "abstencao_pct": 17.41,
+   "lula_pct": 44.59,
+   "flavio_pct": 44.54,
+   "lula_share": 50.03
+  },
+  "BA": {
+   "secoes": 35476,
+   "aptos": 11312752,
+   "comparecimento": 9053601,
+   "abstencao_pct": 19.97,
+   "lula_pct": 62.57,
+   "flavio_pct": 26.98,
+   "lula_share": 69.87
+  },
+  "CE": {
+   "secoes": 23765,
+   "aptos": 6996545,
+   "comparecimento": 5910471,
+   "abstencao_pct": 15.52,
+   "lula_pct": 60.15,
+   "flavio_pct": 29.72,
+   "lula_share": 66.93
+  },
+  "DF": {
+   "secoes": 6969,
+   "aptos": 2258320,
+   "comparecimento": 1831396,
+   "abstencao_pct": 18.9,
+   "lula_pct": 36.89,
+   "flavio_pct": 49.67,
+   "lula_share": 42.62
+  },
+  "ES": {
+   "secoes": 9844,
+   "aptos": 2991650,
+   "comparecimento": 2352282,
+   "abstencao_pct": 21.37,
+   "lula_pct": 36.14,
+   "flavio_pct": 52.43,
+   "lula_share": 40.8
+  },
+  "GO": {
+   "secoes": 15686,
+   "aptos": 5080590,
+   "comparecimento": 3971587,
+   "abstencao_pct": 21.83,
+   "lula_pct": 29.93,
+   "flavio_pct": 51.66,
+   "lula_share": 36.68
+  },
+  "MA": {
+   "secoes": 18093,
+   "aptos": 5183115,
+   "comparecimento": 4160343,
+   "abstencao_pct": 19.73,
+   "lula_pct": 61.68,
+   "flavio_pct": 29.78,
+   "lula_share": 67.44
+  },
+  "MG": {
+   "secoes": 52062,
+   "aptos": 16372372,
+   "comparecimento": 12637274,
+   "abstencao_pct": 22.81,
+   "lula_pct": 41.06,
+   "flavio_pct": 45.72,
+   "lula_share": 47.32
+  },
+  "MS": {
+   "secoes": 7106,
+   "aptos": 2024430,
+   "comparecimento": 1541220,
+   "abstencao_pct": 23.87,
+   "lula_pct": 33.54,
+   "flavio_pct": 56.67,
+   "lula_share": 37.18
+  },
+  "MT": {
+   "secoes": 8287,
+   "aptos": 2637801,
+   "comparecimento": 2052133,
+   "abstencao_pct": 22.2,
+   "lula_pct": 28.35,
+   "flavio_pct": 63.28,
+   "lula_share": 30.94
+  },
+  "PA": {
+   "secoes": 20827,
+   "aptos": 6262397,
+   "comparecimento": 5066504,
+   "abstencao_pct": 19.1,
+   "lula_pct": 47.91,
+   "flavio_pct": 42.71,
+   "lula_share": 52.87
+  },
+  "PB": {
+   "secoes": 10712,
+   "aptos": 3248531,
+   "comparecimento": 2683988,
+   "abstencao_pct": 17.38,
+   "lula_pct": 57.42,
+   "flavio_pct": 30.98,
+   "lula_share": 64.95
+  },
+  "PE": {
+   "secoes": 21418,
+   "aptos": 7223450,
+   "comparecimento": 5911062,
+   "abstencao_pct": 18.17,
+   "lula_pct": 60.12,
+   "flavio_pct": 29.4,
+   "lula_share": 67.16
+  },
+  "PI": {
+   "secoes": 10225,
+   "aptos": 2704758,
+   "comparecimento": 2240883,
+   "abstencao_pct": 17.15,
+   "lula_pct": 68.0,
+   "flavio_pct": 23.07,
+   "lula_share": 74.67
+  },
+  "PR": {
+   "secoes": 27142,
+   "aptos": 8613657,
+   "comparecimento": 6841457,
+   "abstencao_pct": 20.57,
+   "lula_pct": 30.03,
+   "flavio_pct": 57.67,
+   "lula_share": 34.24
+  },
+  "RJ": {
+   "secoes": 37675,
+   "aptos": 12857648,
+   "comparecimento": 9859802,
+   "abstencao_pct": 23.32,
+   "lula_pct": 37.46,
+   "flavio_pct": 50.37,
+   "lula_share": 42.65
+  },
+  "RN": {
+   "secoes": 8115,
+   "aptos": 2659825,
+   "comparecimento": 2171013,
+   "abstencao_pct": 18.38,
+   "lula_pct": 57.02,
+   "flavio_pct": 33.19,
+   "lula_share": 63.21
+  },
+  "RO": {
+   "secoes": 4698,
+   "aptos": 1265893,
+   "comparecimento": 991080,
+   "abstencao_pct": 21.71,
+   "lula_pct": 25.29,
+   "flavio_pct": 65.89,
+   "lula_share": 27.74
+  },
+  "RR": {
+   "secoes": 1519,
+   "aptos": 401521,
+   "comparecimento": 332772,
+   "abstencao_pct": 17.12,
+   "lula_pct": 22.36,
+   "flavio_pct": 69.51,
+   "lula_share": 24.34
+  },
+  "RS": {
+   "secoes": 27547,
+   "aptos": 8522545,
+   "comparecimento": 6702903,
+   "abstencao_pct": 21.35,
+   "lula_pct": 34.24,
+   "flavio_pct": 53.32,
+   "lula_share": 39.1
+  },
+  "SC": {
+   "secoes": 17326,
+   "aptos": 5734651,
+   "comparecimento": 4648159,
+   "abstencao_pct": 18.95,
+   "lula_pct": 24.25,
+   "flavio_pct": 64.54,
+   "lula_share": 27.31
+  },
+  "SE": {
+   "secoes": 5923,
+   "aptos": 1740135,
+   "comparecimento": 1439082,
+   "abstencao_pct": 17.3,
+   "lula_pct": 59.48,
+   "flavio_pct": 29.04,
+   "lula_share": 67.19
+  },
+  "SP": {
+   "secoes": 103656,
+   "aptos": 34122892,
+   "comparecimento": 26431992,
+   "abstencao_pct": 22.54,
+   "lula_pct": 35.96,
+   "flavio_pct": 48.89,
+   "lula_share": 42.38
+  },
+  "TO": {
+   "secoes": 4384,
+   "aptos": 1182023,
+   "comparecimento": 965196,
+   "abstencao_pct": 18.34,
+   "lula_pct": 41.86,
+   "flavio_pct": 48.62,
+   "lula_share": 46.26
+  },
+  "ZZ": {
+   "secoes": 1309,
+   "aptos": 916039,
+   "comparecimento": 341766,
+   "abstencao_pct": 62.69,
+   "lula_pct": 46.05,
+   "flavio_pct": 42.1,
+   "lula_share": 52.24
+  }
+ }
+}
