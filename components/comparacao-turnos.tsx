@@ -44,7 +44,7 @@ function paraMapa(m: Metricas): UfResultado {
 function ComparacaoTurnosConteudo() {
   const [dados, setDados] = useState<Dados | null>(null);
   const [erro, setErro] = useState('');
-  const [ano, setAno] = useState('2022');
+  const [ano, setAno] = useState('2026');
   const [regiao, setRegiao] = useState<'br' | 'ext'>('br');
   const [uf, setUf] = useState<string | null>(null);
   const [cidade, setCidade] = useState<string | null>(null);
@@ -106,7 +106,7 @@ function ComparacaoTurnosConteudo() {
         </Group>
 
         <SimpleGrid cols={{base: 1, sm: 2, lg: 4}} spacing="md" verticalSpacing="md">
-          <Select label="Ano" data={['2022', '2026']} value={ano}
+          <Select label="Ano" data={['2026', '2022']} value={ano}
             onChange={v => { if (v) { setAno(v); setUf(null); setCidade(null); } }} allowDeselect={false} />
           <Stack gap={4}>
             <Text size="sm" fw={500}>Região</Text>
