@@ -1,7 +1,5 @@
 name: Apuração ao vivo 2026 (2º turno)
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -25,10 +23,10 @@ jobs:
           path: ao_vivo_estado
           key: ao-vivo-2t-${{ github.run_id }}
           restore-keys: ao-vivo-2t-
-      - name: Coletar a cada 2 min até meia-noite de Brasília (03:00 UTC de 26/10)
+      - name: Coletar um ciclo (disparado a cada 2 min pelo Agendador de Tarefas)
         env:
           AO_VIVO_WORKERS: '32'
-        run: python scripts/ao_vivo.py --turno 2 --dura 270 --intervalo 120 --publicar --publicar-intervalo 600 --ate 2026-10-26T03:00:00Z
+        run: python scripts/ao_vivo.py --turno 2 --uma-vez --publicar --publicar-intervalo 600 --ate 2026-10-26T03:00:00Z
       - name: Disparar publicação do site quando houve mudança
         env:
           GH_TOKEN: ${{ github.token }}
