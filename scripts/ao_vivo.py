@@ -34,7 +34,7 @@ UFS = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mt', 'ms', '
        'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se', 'to', 'zz']
 PLEITO = {1: '3220', 2: '3221'}
 ELEICAO = {1: 6257, 2: 6258}
-WORKERS = int(os.environ.get('AO_VIVO_WORKERS', '16'))
+WORKERS = int(os.environ.get('AO_VIVO_WORKERS', '6'))
 
 
 def pl6(turno):
@@ -54,8 +54,11 @@ def _sessao():
     return _local.s
 
 
-def pede(url, headers=None, tentativas=3):
-    """Devolve (status, corpo, headers). 304 quando o ETag não mudou. 404 vira status 404."""
+def pede(url, headers=None, tentativas=8):
+    """Devolve (status, corpo, headers). 304 quando o ETag não mudou. 404 vira status 404.
+
+    O TSE limita o ritmo: HTTP 429 espera mais a cada tentativa, em vez de desistir da seção.
+    """
     ultimo = None
     for i in range(tentativas):
         try:
@@ -67,9 +70,11 @@ def pede(url, headers=None, tentativas=3):
             if r.status_code == 200:
                 return 200, r.content, dict(r.headers)
             ultimo = f'HTTP {r.status_code}'
+            espera = 10 * (i + 1) if r.status_code == 429 else 2 * (i + 1)
         except requests.RequestException as e:
             ultimo = e
-        time.sleep(2 * (i + 1))
+            espera = 2 * (i + 1)
+        time.sleep(espera)
     raise RuntimeError(f'falha em {url}: {ultimo}')
 
 

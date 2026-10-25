@@ -9,7 +9,7 @@ concurrency:
 jobs:
   coleta:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,7 +24,7 @@ jobs:
           restore-keys: ao-vivo-2t-
       - name: Coletar um ciclo (disparado a cada 2 min pelo Agendador de Tarefas)
         env:
-          AO_VIVO_WORKERS: '32'
+          AO_VIVO_WORKERS: '6'
         run: python scripts/ao_vivo.py --turno 2 --uma-vez --publicar --publicar-intervalo 120 --ate 2026-10-26T03:00:00Z
       - name: Enviar o dado ao vivo para o R2 (lido pelo Worker)
         if: success()
