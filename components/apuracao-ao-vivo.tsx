@@ -3,8 +3,8 @@ import {useEffect,useState} from 'react';
 import {Alert,Badge,Group,Paper,Table,Text,Title} from '@mantine/core';
 import {UFS} from '@/lib/tse';
 
-// Arquivo publicado pelo coletor numa branch própria: não passa pelo deploy do site.
-const URL_DADOS = 'https://raw.githubusercontent.com/pjoao266/raiox-eleicao/dados-ao-vivo/public/data/ao-vivo-2t.json';
+// Worker que lê o arquivo do R2 (sem cache): o dado chega em até 2 minutos da coleta.
+const URL_DADOS = 'https://raiox-ao-vivo.pjoao266cefetmgdiv.workers.dev/ao-vivo-2t.json';
 const INTERVALO_MS = 120000;
 
 type Agregado = {
