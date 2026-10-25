@@ -86,7 +86,7 @@ function ComparacaoTurnosConteudo() {
 
   return (
     <Stack gap="md">
-        <Group justify="space-between" align="flex-start" wrap="wrap">
+        <Group justify="space-between" align="flex-start" wrap="wrap" gap="sm">
           <div>
             <Title order={2} size="h3">Comparar turnos</Title>
             <Text size="sm" c="dimmed">Mesmas seções, 1º × 2º turno. {info.descricao}</Text>
@@ -96,7 +96,7 @@ function ComparacaoTurnosConteudo() {
           </Badge>
         </Group>
 
-        <Group grow align="flex-end" wrap="wrap">
+        <SimpleGrid cols={{base: 1, sm: 2, lg: 4}} spacing="md" verticalSpacing="md">
           <Select label="Ano" data={['2022', '2026']} value={ano}
             onChange={v => { if (v) { setAno(v); setUf(null); setCidade(null); } }} allowDeselect={false} />
           <Stack gap={4}>
@@ -113,7 +113,7 @@ function ComparacaoTurnosConteudo() {
             <SegmentedControl value={turnoMapa} onChange={v => setTurnoMapa(v as 't1' | 't2')}
               data={[{label: '1º turno', value: 't1'}, {label: '2º turno', value: 't2'}]} />
           </Stack>
-        </Group>
+        </SimpleGrid>
 
         {grupo && (
           <SimpleGrid cols={{base: 1, sm: 3}}>
@@ -155,6 +155,7 @@ function ComparacaoTurnosConteudo() {
             <Title order={4} mb="sm">
               {chave === CHAVE_BR ? 'Brasil (sem exterior)' : chave === CHAVE_EXT ? 'Exterior (total)' : chave.startsWith('UF|') ? (UFS[chave.slice(3).toLowerCase()]?.name ?? chave.slice(3)) : limpa(chave.replace(/^ZZ\|/, ''))}
             </Title>
+            <Table.ScrollContainer minWidth={320}>
             <Table striped highlightOnHover withTableBorder>
               <Table.Thead>
                 <Table.Tr>
@@ -191,6 +192,7 @@ function ComparacaoTurnosConteudo() {
                 </Table.Tr>
               </Table.Tbody>
             </Table>
+            </Table.ScrollContainer>
 
             <Text size="sm" fw={600} mt="md">De onde veio a variação de {nomeLula}</Text>
             <Text size="sm" c="dimmed">
