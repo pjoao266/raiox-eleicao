@@ -4,7 +4,6 @@ import {MantineProvider,Alert,Badge,Group,Paper,Select,SegmentedControl,SimpleGr
 import '@mantine/core/styles.css';
 import {ComparacaoMapa,type UfResultado} from '@/components/comparacao-mapa';
 import {UFS} from '@/lib/tse';
-import {UFS} from '@/lib/tse';
 
 type Metricas = {
   secoes: number; aptos: number; comparecimento: number; abstencao_pct: number; comparecimento_pct: number;
