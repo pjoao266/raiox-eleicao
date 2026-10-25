@@ -32,7 +32,7 @@ function paraMapa(m: Metricas): UfResultado {
   };
 }
 
-export function ComparacaoTurnos() {
+function ComparacaoTurnosConteudo() {
   const [dados, setDados] = useState<Dados | null>(null);
   const [erro, setErro] = useState('');
   const [ano, setAno] = useState('2022');
@@ -85,8 +85,7 @@ export function ComparacaoTurnos() {
   const nomeOutro = info.candidatos.outro;
 
   return (
-    <MantineProvider forceColorScheme="dark">
-      <Stack gap="md">
+    <Stack gap="md">
         <Group justify="space-between" align="flex-start" wrap="wrap">
           <div>
             <Title order={2} size="h3">Comparar turnos</Title>
@@ -201,7 +200,15 @@ export function ComparacaoTurnos() {
             </Text>
           </Paper>
         )}
-      </Stack>
+    </Stack>
+  );
+}
+
+// O MantineProvider fica por fora, para que também funcione enquanto os dados carregam.
+export function ComparacaoTurnos() {
+  return (
+    <MantineProvider forceColorScheme="dark">
+      <ComparacaoTurnosConteudo />
     </MantineProvider>
   );
 }
