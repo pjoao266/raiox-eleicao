@@ -39,6 +39,7 @@ WORKERS = int(os.environ.get('AO_VIVO_WORKERS', '16'))
 def pl6(turno):
     """Código do pleito com 6 dígitos, como aparece nos nomes de arquivo do TSE (p003221)."""
     return f'{int(PLEITO[turno]):06d}'
+BRANCH_DADOS = 'dados-ao-vivo'
 ESTADO_DIR = os.path.join(RAIZ, 'ao_vivo_estado')   # fora do git: guarda o que já foi baixado
 
 
@@ -242,13 +243,16 @@ def grava_se_mudou(caminho, saida):
 
 
 def publica(caminho, turno):
+    """Publica o agregado numa branch própria (dados-ao-vivo), sem passar pelo deploy do site.
+
+    A página lê o arquivo pelo raw.githubusercontent.com, então cada publicação aparece em segundos.
+    A branch é reescrita a cada publicação: guarda só o estado mais recente, não o histórico.
+    """
     msg = f'Atualiza apuração ao vivo 2026 {turno}º turno'
-    subprocess.run(['git', 'add', caminho], cwd=RAIZ, check=True)
+    subprocess.run(['git', 'add', '-f', caminho], cwd=RAIZ, check=True)
     subprocess.run(['git', '-c', 'user.name=ao-vivo-bot', '-c', 'user.email=contato@melhorpreco.lat',
                     'commit', '-q', '-m', msg], cwd=RAIZ, check=True)
-    subprocess.run(['git', 'push', '-q', 'origin', 'HEAD'], cwd=RAIZ, check=True)
-    # sinal para o workflow: o push feito pelo GITHUB_TOKEN não dispara o deploy, então o workflow dispara a publicação
-    open(os.path.join(ESTADO_DIR, 'publicou.flag'), 'w').write(msg)
+    subprocess.run(['git', 'push', '-q', '-f', 'origin', f'HEAD:refs/heads/{BRANCH_DADOS}'], cwd=RAIZ, check=True)
 
 
 def main():

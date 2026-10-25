@@ -3,6 +3,7 @@ import {useEffect,useMemo,useState} from 'react';
 import {MantineProvider,Alert,Badge,Group,Paper,Select,SegmentedControl,SimpleGrid,Stack,Table,Text,Title} from '@mantine/core';
 import '@mantine/core/styles.css';
 import {ComparacaoMapa,type UfResultado} from '@/components/comparacao-mapa';
+import {ApuracaoAoVivo} from '@/components/apuracao-ao-vivo';
 import {UFS} from '@/lib/tse';
 
 type Metricas = {
@@ -104,6 +105,8 @@ function ComparacaoTurnosConteudo() {
             {info.status === 'completo' ? 'Completo' : 'Parcial'} · {info.secoes_pareadas.toLocaleString('pt-BR')} seções
           </Badge>
         </Group>
+
+        {ano === '2026' && <ApuracaoAoVivo />}
 
         <SimpleGrid cols={{base: 1, sm: 2, lg: 4}} spacing="md" verticalSpacing="md">
           <Select label="Ano" data={['2026', '2022']} value={ano}
