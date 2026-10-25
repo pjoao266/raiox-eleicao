@@ -76,9 +76,12 @@ def pede(url, headers=None, tentativas=3):
 def carrega_estado(turno):
     os.makedirs(ESTADO_DIR, exist_ok=True)
     arq = os.path.join(ESTADO_DIR, f'estado_{turno}t.json')
+    # versão 2: candidatos como inteiros. Estado de versão antiga é descartado e refeito.
     if os.path.exists(arq):
-        return arq, json.load(open(arq, encoding='utf-8'))
-    return arq, {'etags': {}, 'secoes': {}}
+        est = json.load(open(arq, encoding='utf-8'))
+        if est.get('versao') == 2:
+            return arq, est
+    return arq, {'etags': {}, 'secoes': {}, 'versao': 2}
 
 
 def salva_estado(arq, estado):
@@ -128,9 +131,9 @@ def coleta_secao(chave, turno, pasta_tmp):
 
 def registro(p):
     return {'aptos': p['aptos'], 'comparecimento': p['comparecimento'], 'brancos': p['brancos'],
-            'nulos': p['nulos'], 'lula': p['votos_nominais'].get('13', 0),
-            'flavio': p['votos_nominais'].get('22', 0),
-            'outros': sum(v for k, v in p['votos_nominais'].items() if k not in ('13', '22')),
+            'nulos': p['nulos'], 'lula': p['votos_nominais'].get(13, 0),
+            'flavio': p['votos_nominais'].get(22, 0),
+            'outros': sum(v for k, v in p['votos_nominais'].items() if k not in (13, 22)),
             'emissao': p.get('emissao_bu')}
 
 
