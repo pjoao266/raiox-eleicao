@@ -52,3 +52,6 @@ next-env.d.ts
 ao_vivo_estado/
 dist-pages/
 package-lock.json
+
+# Worker: estado local do wrangler
+workers/ao-vivo/.wrangler/
