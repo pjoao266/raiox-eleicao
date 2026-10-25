@@ -1,7 +1,7 @@
 name: Apuração ao vivo 2026 (2º turno)
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -12,7 +12,7 @@ concurrency:
 jobs:
   coleta:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,12 +25,14 @@ jobs:
           path: ao_vivo_estado
           key: ao-vivo-2t-${{ github.run_id }}
           restore-keys: ao-vivo-2t-
-      - name: Coletar seções novas e atualizar o agregado
+      - name: Coletar a cada 2 min até meia-noite de Brasília (03:00 UTC de 26/10)
         env:
           AO_VIVO_WORKERS: '32'
-        run: python scripts/ao_vivo.py --turno 2 --uma-vez --publicar
+        run: python scripts/ao_vivo.py --turno 2 --dura 270 --intervalo 120 --publicar --publicar-intervalo 600 --ate 2026-10-26T03:00:00Z
       - name: Disparar publicação do site quando houve mudança
-        if: ${{ hashFiles('ao_vivo_estado/publicou.flag') != '' }}
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run "Publicar Raio-X Eleitoral" --ref main
+        run: |
+          if [ -f ao_vivo_estado/publicou.flag ]; then
+            gh workflow run "Publicar Raio-X Eleitoral" --ref main
+          fi

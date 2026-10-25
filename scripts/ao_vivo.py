@@ -256,22 +256,46 @@ def main():
     p.add_argument('--turno', type=int, choices=[1, 2], default=2)
     p.add_argument('--intervalo', type=int, default=600, help='segundos entre ciclos (padrão 600)')
     p.add_argument('--publicar', action='store_true', help='commit e push quando o agregado mudar')
+    p.add_argument('--publicar-intervalo', type=int, default=600,
+                   help='no mínimo estes segundos entre publicações (evita fila de deploys)')
     p.add_argument('--uma-vez', action='store_true')
     p.add_argument('--limite', type=int, default=0, help='máximo de seções novas por ciclo (teste)')
+    p.add_argument('--dura', type=int, default=0, help='para depois de N segundos (0 = não para)')
+    p.add_argument('--ate', default='', help='para no horário UTC ISO, ex.: 2026-10-26T03:00:00Z')
     a = p.parse_args()
     caminho = os.path.join(RAIZ, 'public', 'data', f'ao-vivo-{a.turno}t.json')
     arq, estado = carrega_estado(a.turno)
+    inicio = time.time()
+    fim_ate = datetime.fromisoformat(a.ate.replace('Z', '+00:00')).timestamp() if a.ate else None
+    if fim_ate and time.time() >= fim_ate:
+        print('horário limite já passou; nada a fazer', flush=True)
+        return
+    flag = os.path.join(ESTADO_DIR, 'publicou.flag')
+    if os.path.exists(flag):
+        os.remove(flag)
     while True:
         saida = ciclo(a.turno, estado, os.path.dirname(caminho), a.limite)
         mudou = grava_se_mudou(caminho, saida)
         print(f"[{datetime.now():%H:%M:%S}] {saida['brasil']['secoes_totalizadas']} seções BR, "
               f"{saida['exterior']['secoes_totalizadas']} exterior · {'mudou' if mudou else 'sem mudança'}", flush=True)
-        if mudou and a.publicar:
+        agora = time.time()
+        ultima = estado.get('ultima_publicacao', 0)
+        if mudou and a.publicar and agora - ultima >= a.publicar_intervalo:
             publica(caminho, a.turno)
+            estado['ultima_publicacao'] = agora
+            salva_estado(arq, estado)
             print('  publicado', flush=True)
         if a.uma_vez:
             break
-        time.sleep(a.intervalo)
+        if fim_ate and agora >= fim_ate:
+            print('  horário limite atingido', flush=True)
+            break
+        if a.dura and agora - inicio >= a.dura:
+            break
+        espera = a.intervalo
+        if fim_ate:
+            espera = min(espera, max(0, fim_ate - agora))
+        time.sleep(espera)
 
 
 if __name__ == '__main__':
