@@ -4,6 +4,7 @@ import {MantineProvider,Alert,Badge,Group,Paper,Select,SegmentedControl,SimpleGr
 import '@mantine/core/styles.css';
 import {ComparacaoMapa,type UfResultado} from '@/components/comparacao-mapa';
 import {UFS} from '@/lib/tse';
+import {UFS} from '@/lib/tse';
 
 type Metricas = {
   secoes: number; aptos: number; comparecimento: number; abstencao_pct: number; comparecimento_pct: number;
@@ -122,7 +123,7 @@ function ComparacaoTurnosConteudo() {
               {titulo: nomeOutro, cor: '#2563eb', valor: grupo.turno2.flavio_pct_aptos, antes: grupo.turno1.flavio_pct_aptos, delta: grupo.flavio?.delta_pp_total, bom: true},
               {titulo: 'Abstenção', cor: '#64748b', valor: grupo.turno2.abstencao_pct, antes: grupo.turno1.abstencao_pct, delta: grupo.delta_abstencao_pp, bom: false},
             ].map(c => (
-              <Paper key={c.titulo} withBorder p="md" radius="md" style={{borderLeft: `4px solid ${c.cor}`}}>
+              <Paper key={c.titulo} withBorder p="md" radius="md" style={{borderLeft: `4px solid ${c.cor}`, background: 'rgba(15, 23, 42, 0.7)'}}>
                 <Text size="sm" fw={600}>{c.titulo}</Text>
                 <Text size="xs" c="dimmed">1º turno {pct(c.antes)} → 2º turno</Text>
                 <Text size="xl" fw={700}>{pct(c.valor)}</Text>
@@ -140,6 +141,11 @@ function ComparacaoTurnosConteudo() {
               ? <ComparacaoMapa resultados={porEstado[turnoMapa]} selecionado={uf} onSelect={setUf} />
               : <Alert color="yellow">Os estados ainda não têm 2º turno publicado para {ano}.</Alert>}
             <Text size="xs" c="dimmed" mt="xs">Clique em um estado para filtrar a tabela. Clique de novo para voltar ao Brasil.</Text>
+            <Group gap="md" mt="xs" align="center">
+              <Group gap={6}><span style={{width: 14, height: 14, borderRadius: 3, background: '#dc2626', display: 'inline-block'}} /><Text size="xs">Lula venceu</Text></Group>
+              <Group gap={6}><span style={{width: 14, height: 14, borderRadius: 3, background: '#2563eb', display: 'inline-block'}} /><Text size="xs">Flávio venceu</Text></Group>
+              <Text size="xs" c="dimmed">Cor mais forte = vencedor com mais porcentagem</Text>
+            </Group>
           </Paper>
         )}
 
@@ -148,7 +154,7 @@ function ComparacaoTurnosConteudo() {
         ) : (
           <Paper withBorder p="md" radius="md">
             <Title order={4} mb="sm">
-              {chave === CHAVE_BR ? 'Brasil (sem exterior)' : chave === CHAVE_EXT ? 'Exterior (total)' : limpa(chave.replace(/^(UF|ZZ)\|/, ''))}
+              {chave === CHAVE_BR ? 'Brasil (sem exterior)' : chave === CHAVE_EXT ? 'Exterior (total)' : chave.startsWith('UF|') ? (UFS[chave.slice(3).toLowerCase()]?.name ?? chave.slice(3)) : limpa(chave.replace(/^ZZ\|/, ''))}
             </Title>
             <Table striped highlightOnHover withTableBorder>
               <Table.Thead>
