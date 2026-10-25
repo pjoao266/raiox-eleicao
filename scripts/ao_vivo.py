@@ -79,9 +79,9 @@ def carrega_estado(turno):
     # versão 2: candidatos como inteiros. Estado de versão antiga é descartado e refeito.
     if os.path.exists(arq):
         est = json.load(open(arq, encoding='utf-8'))
-        if est.get('versao') == 2:
+        if est.get('versao') == 3:
             return arq, est
-    return arq, {'etags': {}, 'secoes': {}, 'versao': 2}
+    return arq, {'etags': {}, 'secoes': {}, 'secoes1t': {}, 'versao': 3}
 
 
 def salva_estado(arq, estado):
@@ -196,6 +196,15 @@ def ciclo(turno, estado, pasta_saida, limite=0):
                     print(f'  {chave}: {motivo}', flush=True)
                 continue
             estado['secoes'][chave] = registro(p)
+    if turno == 2:
+        # mesmas seções no 1º turno, para comparar por seção
+        faltam1t = [c for c in estado['secoes'] if c not in estado['secoes1t']]
+        if limite:
+            faltam1t = faltam1t[:limite]
+        with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+            for chave, p, motivo in ex.map(lambda c: _seguro(c, 1, tmp), faltam1t):
+                if p is not None:
+                    estado['secoes1t'][chave] = registro(p)
     salva_estado(os.path.join(ESTADO_DIR, f'estado_{turno}t.json'), estado)
     return monta_saida(turno, estado)
 
@@ -229,8 +238,57 @@ def monta_saida(turno, estado):
         alvo = exterior if uf == 'ZZ' else brasil
         for c in ('secoes_total', 'secoes_totalizadas', 'aptos', 'comparecimento', 'brancos', 'nulos', 'lula', 'flavio', 'outros'):
             alvo[c] += a.get(c, 0)
-    return {'ano': 2026, 'turno': turno, 'fonte': 'arquivo-urna do TSE (boletins de urna processados)',
-            'brasil': fecha(brasil), 'exterior': fecha(exterior), 'ufs': ufs}
+    saida = {'ano': 2026, 'turno': turno, 'fonte': 'arquivo-urna do TSE (boletins de urna processados)',
+             'brasil': fecha(brasil), 'exterior': fecha(exterior), 'ufs': ufs}
+    if turno == 2:
+        saida['comparacao'], saida['serie'] = monta_comparacao(estado)
+    return saida
+
+
+CAMPOS_CMP = ('aptos', 'comparecimento', 'brancos', 'nulos', 'lula', 'flavio', 'outros')
+
+
+def monta_comparacao(estado):
+    """1º x 2º turno nas mesmas seções (só as já apuradas nos dois turnos) e série para o gráfico."""
+    pares = [c for c in estado['secoes'] if c in estado['secoes1t']]
+    grupos = {'brasil': [c for c in pares if not c.startswith('zz|')],
+              'exterior': [c for c in pares if c.startswith('zz|')]}
+    comp = {}
+    for nome, chaves in grupos.items():
+        a2 = {k: 0 for k in CAMPOS_CMP}; a1 = {k: 0 for k in CAMPOS_CMP}
+        for c in chaves:
+            for k in CAMPOS_CMP:
+                a2[k] += estado['secoes'][c][k]; a1[k] += estado['secoes1t'][c][k]
+        comp[nome] = {'secoes_pareadas': len(chaves),
+                      'turno1': fecha_cmp(a1), 'turno2': fecha_cmp(a2)}
+    # série: em ordem de emissão do BU no 2º turno, acumulada
+    ordenadas = sorted(pares, key=lambda c: estado['secoes'][c].get('emissao') or '')
+    serie = []; acc2 = {'lula': 0, 'flavio': 0, 'comp': 0, 'aptos': 0}; acc1 = dict(acc2)
+    for i, c in enumerate(ordenadas, 1):
+        r2 = estado['secoes'][c]; r1 = estado['secoes1t'][c]
+        for k in ('lula', 'flavio'):
+            acc2[k] += r2[k]; acc1[k] += r1[k]
+        acc2['comp'] += r2['comparecimento']; acc1['comp'] += r1['comparecimento']
+        acc2['aptos'] += r2['aptos']; acc1['aptos'] += r1['aptos']
+        serie.append({'n': i, 'emissao': r2.get('emissao'),
+                      'lula2': _share(acc2['lula'], acc2['lula'] + acc2['flavio']),
+                      'flavio2': _share(acc2['flavio'], acc2['lula'] + acc2['flavio']),
+                      'lula1': _share(acc1['lula'], acc1['lula'] + acc1['flavio']),
+                      'flavio1': _share(acc1['flavio'], acc1['lula'] + acc1['flavio'])})
+    passo = max(1, len(serie) // 200)
+    serie = serie[::passo] + ([serie[-1]] if serie and (len(serie) - 1) % passo else [])
+    return comp, serie
+
+
+def _share(parte, total):
+    return round(parte / total * 100, 2) if total else None
+
+
+def fecha_cmp(a):
+    tot = a['lula'] + a['flavio']
+    return {'abstencao_pct': round((a['aptos'] - a['comparecimento']) / a['aptos'] * 100, 2) if a['aptos'] else None,
+            'lula_share': _share(a['lula'], tot), 'flavio_share': _share(a['flavio'], tot),
+            'lula_votos': a['lula'], 'flavio_votos': a['flavio']}
 
 
 def digest(saida):
