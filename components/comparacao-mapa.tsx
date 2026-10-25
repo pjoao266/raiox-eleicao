@@ -127,7 +127,7 @@ export function ComparacaoMapa({resultados, selecionado, onSelect}: {
           .map((p: number[], i: number) => {const [x, y] = pt(p); return `${i ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`;})
           .join(' ') + 'Z'
       ).join(' ')).join(' ');
-      return {uf, path, nome: uf ? UFS[uf].name : ibge};
+      return {uf, path, nome: uf ? UFS[uf.toLowerCase()].name : ibge};
     });
   }, [geo]);
 
