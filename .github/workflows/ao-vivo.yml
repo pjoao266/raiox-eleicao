@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
-  actions: write
 concurrency:
   group: ao-vivo-2t
   cancel-in-progress: false
@@ -26,11 +25,4 @@ jobs:
       - name: Coletar um ciclo (disparado a cada 2 min pelo Agendador de Tarefas)
         env:
           AO_VIVO_WORKERS: '32'
-        run: python scripts/ao_vivo.py --turno 2 --uma-vez --publicar --publicar-intervalo 600 --ate 2026-10-26T03:00:00Z
-      - name: Disparar publicação do site quando houve mudança
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          if [ -f ao_vivo_estado/publicou.flag ]; then
-            gh workflow run "Publicar Raio-X Eleitoral" --ref main
-          fi
+        run: python scripts/ao_vivo.py --turno 2 --uma-vez --publicar --publicar-intervalo 120 --ate 2026-10-26T03:00:00Z
