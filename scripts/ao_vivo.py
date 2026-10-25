@@ -158,7 +158,8 @@ def fecha(a):
 
 def _busca_indice(uf, turno, etag):
     url = f'{BASE}/{PLEITO[turno]}/config/{uf}/{uf}-p{pl6(turno)}-cs.json'
-    cab = {'If-None-Match': etag} if etag else {}
+    # sempre lê o índice: só baixa seções que ainda não estão no estado (o ETag pulava UFs e deixava lacunas)
+    cab = {}
     try:
         return uf, pede(url, cab)
     except RuntimeError as e:
