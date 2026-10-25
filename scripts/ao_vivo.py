@@ -18,6 +18,7 @@ import os
 import subprocess
 import sys
 import time
+import hashlib
 import threading
 from concurrent.futures import ThreadPoolExecutor
 
@@ -228,18 +229,21 @@ def monta_saida(turno, estado):
             'brasil': fecha(brasil), 'exterior': fecha(exterior), 'ufs': ufs}
 
 
-def grava_se_mudou(caminho, saida):
-    """Grava o agregado; devolve True se o conteúdo (sem a hora) mudou."""
-    anterior = None
-    if os.path.exists(caminho):
-        anterior = json.load(open(caminho, encoding='utf-8'))
-    if anterior and {k: v for k, v in anterior.items() if k != 'atualizado_em'} == saida:
-        return False
+def digest(saida):
+    return hashlib.sha256(json.dumps(saida, sort_keys=True, ensure_ascii=False).encode('utf-8')).hexdigest()
+
+
+def grava(caminho, saida, estado):
+    """Grava o agregado e informa se ele mudou desde a última gravação (guardada no estado)."""
+    dg = digest(saida)
+    mudou = dg != estado.get('digest_gravado')
     saida = {'atualizado_em': datetime.now(timezone.utc).isoformat(timespec='seconds'), **saida}
     os.makedirs(os.path.dirname(caminho), exist_ok=True)
     with open(caminho, 'w', encoding='utf-8') as f:
         json.dump(saida, f, ensure_ascii=False, indent=1)
-    return True
+    if mudou:
+        estado['digest_gravado'] = dg
+    return mudou
 
 
 def publica(caminho, turno):
@@ -279,16 +283,18 @@ def main():
         os.remove(flag)
     while True:
         saida = ciclo(a.turno, estado, os.path.dirname(caminho), a.limite)
-        mudou = grava_se_mudou(caminho, saida)
+        mudou = grava(caminho, saida, estado)
         print(f"[{datetime.now():%H:%M:%S}] {saida['brasil']['secoes_totalizadas']} seções BR, "
               f"{saida['exterior']['secoes_totalizadas']} exterior · {'mudou' if mudou else 'sem mudança'}", flush=True)
         agora = time.time()
         ultima = estado.get('ultima_publicacao', 0)
-        if mudou and a.publicar and agora - ultima >= a.publicar_intervalo:
+        pendente = estado.get('digest_gravado') != estado.get('digest_publicado')
+        if pendente and a.publicar and agora - ultima >= a.publicar_intervalo:
             publica(caminho, a.turno)
+            estado['digest_publicado'] = estado.get('digest_gravado')
             estado['ultima_publicacao'] = agora
-            salva_estado(arq, estado)
             print('  publicado', flush=True)
+        salva_estado(arq, estado)
         if a.uma_vez:
             break
         if fim_ate and agora >= fim_ate:
